@@ -6,31 +6,24 @@ import pystac
 from click import Command, Group
 from stactools.testing.cli_test import CliTestCase
 
-from stactools.usgs_lcmap.commands import create_usgslcmap_command
+from stactools.usgs_lcmap.commands import create_usgs_lcmap_command
 
 
 class CommandsTest(CliTestCase):
     def create_subcommand_functions(self) -> List[Callable[[Group], Command]]:
-        return [create_usgslcmap_command]
+        return [create_usgs_lcmap_command]
 
     def test_create_collection(self) -> None:
         with TemporaryDirectory() as tmp_dir:
-            # Run your custom create-collection command and validate
-
-            # Example:
             destination = os.path.join(tmp_dir, "collection.json")
-
-            result = self.run_command(f"usgslcmap create-collection {destination}")
-
+            result = self.run_command(
+                f"usgs-lcmap create-collection CONUS {destination}"
+            )
             assert result.exit_code == 0, "\n{}".format(result.output)
-
             jsons = [p for p in os.listdir(tmp_dir) if p.endswith(".json")]
             assert len(jsons) == 1
-
             collection = pystac.read_file(destination)
-            assert collection.id == "my-collection-id"
-            # assert collection.other_attr...
-
+            assert collection.id == "usgs-lcmap-conus"
             collection.validate()
 
     def test_create_item(self) -> None:
@@ -40,7 +33,7 @@ class CommandsTest(CliTestCase):
             # Example:
             infile = "/path/to/asset.tif"
             destination = os.path.join(tmp_dir, "item.json")
-            result = self.run_command(f"usgslcmap create-item {infile} {destination}")
+            result = self.run_command(f"usgs-lcmap create-item {infile} {destination}")
             assert result.exit_code == 0, "\n{}".format(result.output)
 
             jsons = [p for p in os.listdir(tmp_dir) if p.endswith(".json")]

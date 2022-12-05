@@ -1,60 +1,35 @@
 import logging
 from datetime import datetime, timezone
 
-from pystac import (
-    Asset,
-    CatalogType,
-    Collection,
-    Extent,
-    Item,
-    MediaType,
-    Provider,
-    ProviderRole,
-    SpatialExtent,
-    TemporalExtent,
-)
+import pystac
+from pystac import Asset, Item, MediaType
 from pystac.extensions.projection import ProjectionExtension
+
+from stactools.usgs_lcmap import constants
 
 logger = logging.getLogger(__name__)
 
 
-def create_collection() -> Collection:
-    """Create a STAC Collection
-
-    This function includes logic to extract all relevant metadata from
-    an asset describing the STAC collection and/or metadata coded into an
-    accompanying constants.py file.
-
-    See `Collection<https://pystac.readthedocs.io/en/latest/api.html#collection>`_.
+def create_collection(region: constants.Region) -> pystac.Collection:
+    """Create a STAC Collection for CONUS or Hawaii.
 
     Returns:
-        Collection: STAC Collection object
+        Collection: STAC Collection object.
     """
-    providers = [
-        Provider(
-            name="The OS Community",
-            roles=[ProviderRole.PRODUCER, ProviderRole.PROCESSOR, ProviderRole.HOST],
-            url="https://github.com/stac-utils/stactools",
+    if region is constants.Region.CU:
+        collection = pystac.Collection(**constants.COLLECTION_CONUS)
+        collection.add_links([constants.ABOUT_LINK_CONUS, constants.LICENSE_LINK_CONUS])
+    else:
+        collection = pystac.Collection(**constants.COLLECTION_HAWAII)
+        collection.add_links(
+            [constants.ABOUT_LINK_HAWAII, constants.LICENSE_LINK_HAWAII]
         )
-    ]
 
-    # Time must be in UTC
-    demo_time = datetime.now(tz=timezone.utc)
+    collection.providers = [constants.PROVIDER]
 
-    extent = Extent(
-        SpatialExtent([[-180.0, 90.0, 180.0, -90.0]]),
-        TemporalExtent([[demo_time, None]]),
-    )
-
-    collection = Collection(
-        id="my-collection-id",
-        title="A dummy STAC Collection",
-        description="Used for demonstration purposes",
-        license="CC-0",
-        providers=providers,
-        extent=extent,
-        catalog_type=CatalogType.RELATIVE_PUBLISHED,
-    )
+    # item_assets
+    # stac extensions
+    # summaries?
 
     return collection
 
