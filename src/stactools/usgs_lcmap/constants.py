@@ -10,6 +10,9 @@ class Region(str, enum.Enum):
     HI = "Hawaii"
 
 
+RASTER_EXTENSION_V11 = "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+CLASSIFICATION_EXTENSION_V11 = "https://stac-extensions.github.io/classification/v1.1.0/schema.json"
+
 PROVIDER = pystac.Provider(
     name="United States Geological Survey",
     roles=[

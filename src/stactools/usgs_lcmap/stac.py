@@ -1,13 +1,83 @@
 import logging
+import tarfile
 from datetime import datetime, timezone
+from pathlib import Path
+from typing import List, Optional
 
 import pystac
-from pystac import Asset, Item, MediaType
+from pystac import Item
 from pystac.extensions.projection import ProjectionExtension
+from stactools.core.io import ReadHrefModifier
 
-from stactools.usgs_lcmap import constants
+from stactools.usgs_lcmap import cog, constants, utils
 
 logger = logging.getLogger(__name__)
+
+
+def create_item(tar_path: str, recog: bool = True) -> Item:
+    """Create a STAC Item from a local TAR file. The contents of the TAR will be
+    extracted and placed alongside the TAR. The existing TIF files will be
+    overwritten with reprocessed COGs if `recog` is True.
+
+    Args:
+        tar_path (str): Local path to a TAR archive
+        recog (bool): Flag to reprocess the COGs. Default is True.
+
+    Returns:
+        Item: STAC Item object
+    """
+    with tarfile.open(tar_path) as tar:
+        tar.extractall(path=Path(tar_path).parent)
+
+    asset_list = Path(tar_path).parent.glob("*.*")
+    asset_list = [f.as_posix() for f in asset_list]
+    if recog:
+        for tif in [f for f in asset_list if Path(f).suffix == ".tif"]:
+            cog.recog(tif)
+
+    return create_item_from_asset_list(asset_list)
+
+
+def create_item_from_asset_list(
+    asset_list: List[str], read_href_modifier: Optional[ReadHrefModifier] = None
+) -> None:
+    asset_dict = utils.get_asset_dict(asset_list)
+    metadata = utils.Metadata.from_cog(
+        asset_dict["lcpri"].href, read_href_modifier
+    )
+
+    item = Item(
+        id=metadata.id,
+        geometry=metadata.geometry,
+        bbox=metadata.bbox,
+        datetime=None,
+        properties={
+            "start_datetime": metadata.start_datetime,
+            "end_datetime": metadata.end_datetime,
+            "usgs-lcmap:collection": metadata.lcmap_collection,
+            "usgs-lcmap:horizontal_tile": metadata.horizontal_tile,
+            "usgs-lcmap:vertical_tile": metadata.vertical_tile,
+            "usgs-lcmap:production_datetime": metadata.production_datetime
+        }
+    )
+    item.common_metadata.created = datetime.now(tz=timezone.utc)
+    item.common_metadata.title = metadata.title
+
+    projection = ProjectionExtension.ext(item, add_if_missing=True)
+    projection.epsg = None
+    projection.wkt2 = metadata.proj_wkt2
+    projection.shape = metadata.proj_shape
+    projection.transform = metadata.proj_transform
+
+    for key, value in asset_dict.items():
+        item.add_asset(key, value)
+
+    item.stac_extensions.append(constants.RASTER_EXTENSION_V11)
+    item.stac_extensions.append(constants.CLASSIFICATION_EXTENSION_V11)
+
+    # TODO: update the geometry with stactools raster footprint?
+
+    return item
 
 
 def create_collection(region: constants.Region) -> pystac.Collection:
@@ -27,66 +97,15 @@ def create_collection(region: constants.Region) -> pystac.Collection:
 
     collection.providers = [constants.PROVIDER]
 
-    # item_assets
-    # stac extensions
-    # summaries?
+    # TODO: item_assets
+    # TODO: stac extensions
+    # TODO: summaries?
 
     return collection
 
 
-def create_item(asset_href: str) -> Item:
-    """Create a STAC Item
-
-    This function should include logic to extract all relevant metadata from an
-    asset, metadata asset, and/or a constants.py file.
-
-    See `Item<https://pystac.readthedocs.io/en/latest/api.html#item>`_.
-
-    Args:
-        asset_href (str): The HREF pointing to an asset associated with the item
-
-    Returns:
-        Item: STAC Item object
-    """
-
-    properties = {
-        "title": "A dummy STAC Item",
-        "description": "Used for demonstration purposes",
-    }
-
-    demo_geom = {
-        "type": "Polygon",
-        "coordinates": [[[-180, -90], [180, -90], [180, 90], [-180, 90], [-180, -90]]],
-    }
-
-    # Time must be in UTC
-    demo_time = datetime.now(tz=timezone.utc)
-
-    item = Item(
-        id="my-item-id",
-        properties=properties,
-        geometry=demo_geom,
-        bbox=[-180, 90, 180, -90],
-        datetime=demo_time,
-        stac_extensions=[],
-    )
-
-    # It is a good idea to include proj attributes to optimize for libs like stac-vrt
-    proj_attrs = ProjectionExtension.ext(item, add_if_missing=True)
-    proj_attrs.epsg = 4326
-    proj_attrs.bbox = [-180, 90, 180, -90]
-    proj_attrs.shape = [1, 1]  # Raster shape
-    proj_attrs.transform = [-180, 360, 0, 90, 0, 180]  # Raster GeoTransform
-
-    # Add an asset to the item (COG for example)
-    item.add_asset(
-        "image",
-        Asset(
-            href=asset_href,
-            media_type=MediaType.COG,
-            roles=["data"],
-            title="A dummy STAC Item COG",
-        ),
-    )
-
-    return item
+if __name__ == "__main__":
+    tar_path = "/Users/pjh/dev/usgs-lcmap/tests/data-files/LCMAP/CONUS/LCMAP_CU_002004_2021_20220723_V13_CCDC.tar"
+    item = create_item(tar_path=tar_path, recog=False)
+    import json
+    print(json.dumps(item.to_dict(), indent=4))
