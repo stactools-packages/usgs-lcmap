@@ -42,9 +42,7 @@ def create_item_from_asset_list(
     asset_list: List[str], read_href_modifier: Optional[ReadHrefModifier] = None
 ) -> None:
     asset_dict = utils.get_asset_dict(asset_list)
-    metadata = utils.Metadata.from_cog(
-        asset_dict["lcpri"].href, read_href_modifier
-    )
+    metadata = utils.Metadata.from_cog(asset_dict["lcpri"].href, read_href_modifier)
 
     item = Item(
         id=metadata.id,
@@ -57,8 +55,7 @@ def create_item_from_asset_list(
             "usgs-lcmap:collection": metadata.lcmap_collection,
             "usgs-lcmap:horizontal_tile": metadata.horizontal_tile,
             "usgs-lcmap:vertical_tile": metadata.vertical_tile,
-            "usgs-lcmap:production_datetime": metadata.production_datetime
-        }
+        },
     )
     item.common_metadata.created = datetime.now(tz=timezone.utc)
     item.common_metadata.title = metadata.title
@@ -74,6 +71,7 @@ def create_item_from_asset_list(
 
     item.stac_extensions.append(constants.RASTER_EXTENSION_V11)
     item.stac_extensions.append(constants.CLASSIFICATION_EXTENSION_V11)
+    item.stac_extensions.append(constants.FILE_EXTENSION_V21)
 
     # TODO: update the geometry with stactools raster footprint?
 

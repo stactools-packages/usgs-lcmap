@@ -70,7 +70,10 @@ def get_variable_asset_info(asset_list: List[str]) -> Dict[str, str]:
             raise ValueError(f"Unexpected file found: '{href}.")
 
         variable[key]["href"] = href
-        variable[key]["production"] = parsed["production"]
+        variable[key]["production"] = (
+            f"{parsed['production'][0:4]}-{parsed['production'][4:6]}-"
+            f"{parsed['production'][6:8]}T00:00:00Z"
+        )
 
     return variable
 
@@ -99,7 +102,6 @@ class Metadata:
     bbox: List[float]
     start_datetime: str
     end_datetime: str
-    production_datetime: str
     horizontal_tile: int
     vertical_tile: int
     lcmap_collection: str
@@ -129,10 +131,6 @@ class Metadata:
             f"LCMAP_{parsed['region']}_{parsed['htile']}{parsed['vtile']}_"
             f"{parsed['year']}_V{parsed['version']}_CCDC"
         )
-        production_datetime = (
-            f"{parsed['production'][0:4]}-{parsed['production'][4:6]}-"
-            f"{parsed['production'][6:8]}T00:00:00Z"
-        )
         start_datetime = f"{parsed['year']}-01-01T00:00:00Z"
         end_datetime = f"{parsed['year']}-12-31T23:59:59Z"
         region = "CONUS" if parsed["region"] == "CU" else "Hawaii"
@@ -150,7 +148,6 @@ class Metadata:
             bbox=bbox,
             start_datetime=start_datetime,
             end_datetime=end_datetime,
-            production_datetime=production_datetime,
             horizontal_tile=int(parsed["htile"]),
             vertical_tile=int(parsed["vtile"]),
             lcmap_collection=lcmap_collection,

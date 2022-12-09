@@ -40,8 +40,56 @@
         "classification:classes": [
             {
                 "value": 0,
-                "name": "nodata",
+                "name": "No Data",
                 "color_hint": "000000"
+            },
+            {
+                "value": 1,
+                "name": "Developed",
+                "description": "Areas of intensive use with much of the land covered with structures (e.g., high-density residential, commercial, industrial, mining, or transportation), or less intensive uses where the land cover matrix includes vegetation, bare ground, and structures (e.g., low-density residential, recreational facilities, cemeteries, transportation/utility corridors, etc.), including any land functionality related to the developed or built-up activity.",
+                "color_hint": "ff3232"
+            },
+            {
+                "value": 2,
+                "name": "Cropland",
+                "description": "Land in either a vegetated or unvegetated state used in production of food, fiber, and fuels. This includes cultivated and uncultivated croplands, hay lands, orchards, vineyards, and confined livestock operations. Forest plantations are considered as forests or woodlands (Tree Cover class) regardless of the use of the wood products.",
+                "color_hint": "be8c5a"
+            },
+            {
+                "value": 3,
+                "name": "Grassland/Shrubland",
+                "description": "Land predominantly covered with shrubs and perennial or annual natural and domesticated grasses (e.g., pasture), forbs, or other forms of herbaceous vegetation. The grass and shrub cover must comprise at least 10% of the area and tree cover is less than 10% of the area.",
+                "color_hint": "e6f0d2"
+            },
+            {
+                "value": 4,
+                "name": "Tree Cover",
+                "description": "Tree-covered land where the tree cover density is greater than 10%. Cleared or harvested trees (i.e., clearcuts) will be mapped according to current cover (e.g., Barren, Grass/Shrub).",
+                "color_hint": "1c6330"
+            },
+            {
+                "value": 5,
+                "name": "Water Bodies",
+                "description": "Areas covered with water, such as streams, canals, lakes, reservoirs, bays, or oceans.",
+                "color_hint": "0070ff"
+            },
+            {
+                "value": 6,
+                "name": "Wetlands",
+                "description": "Lands where water saturation is the determining factor in soil characteristics, vegetation types, and animal communities. Wetlands are composed of mosaics of water, bare soil, and herbaceous or wooded vegetated cover.",
+                "color_hint": "b3d9ff"
+            },
+            {
+                "value": 7,
+                "name": "Snow and Ice",
+                "description": "Land where accumulated snow and ice does not completely melt during the summer period (i.e., perennial ice/snow).",
+                "color_hint": "ffffff"
+            },
+            {
+                "value": 8,
+                "name": "Natural Barren",
+                "description": "Land comprised of natural occurrences of soils, sand, or rocks where less than 10% of the area is vegetated.",
+                "color_hint": "b3aea3"
             }
         ]
     },
@@ -65,6 +113,61 @@
                 "nodata": 0,
                 "spatial_resolution": 30,
                 "sampling": "area"
+            }
+        ],
+        "classification:classes": [
+            {
+                "value": 0,
+                "name": "No Data",
+                "color_hint": "000000"
+            },
+            {
+                "value": 1,
+                "name": "Developed",
+                "description": "Areas of intensive use with much of the land covered with structures (e.g., high-density residential, commercial, industrial, mining, or transportation), or less intensive uses where the land cover matrix includes vegetation, bare ground, and structures (e.g., low-density residential, recreational facilities, cemeteries, transportation/utility corridors, etc.), including any land functionality related to the developed or built-up activity.",
+                "color_hint": "ff3232"
+            },
+            {
+                "value": 2,
+                "name": "Cropland",
+                "description": "Land in either a vegetated or unvegetated state used in production of food, fiber, and fuels. This includes cultivated and uncultivated croplands, hay lands, orchards, vineyards, and confined livestock operations. Forest plantations are considered as forests or woodlands (Tree Cover class) regardless of the use of the wood products.",
+                "color_hint": "be8c5a"
+            },
+            {
+                "value": 3,
+                "name": "Grassland/Shrubland",
+                "description": "Land predominantly covered with shrubs and perennial or annual natural and domesticated grasses (e.g., pasture), forbs, or other forms of herbaceous vegetation. The grass and shrub cover must comprise at least 10% of the area and tree cover is less than 10% of the area.",
+                "color_hint": "e6f0d2"
+            },
+            {
+                "value": 4,
+                "name": "Tree Cover",
+                "description": "Tree-covered land where the tree cover density is greater than 10%. Cleared or harvested trees (i.e., clearcuts) will be mapped according to current cover (e.g., Barren, Grass/Shrub).",
+                "color_hint": "1c6330"
+            },
+            {
+                "value": 5,
+                "name": "Water Bodies",
+                "description": "Areas covered with water, such as streams, canals, lakes, reservoirs, bays, or oceans.",
+                "color_hint": "0070ff"
+            },
+            {
+                "value": 6,
+                "name": "Wetlands",
+                "description": "Lands where water saturation is the determining factor in soil characteristics, vegetation types, and animal communities. Wetlands are composed of mosaics of water, bare soil, and herbaceous or wooded vegetated cover.",
+                "color_hint": "b3d9ff"
+            },
+            {
+                "value": 7,
+                "name": "Snow and Ice",
+                "description": "Land where accumulated snow and ice does not completely melt during the summer period (i.e., perennial ice/snow).",
+                "color_hint": "ffffff"
+            },
+            {
+                "value": 8,
+                "name": "Natural Barren",
+                "description": "Land comprised of natural occurrences of soils, sand, or rocks where less than 10% of the area is vegetated.",
+                "color_hint": "b3aea3"
             }
         ]
     },
@@ -112,6 +215,44 @@
                 "spatial_resolution": 30,
                 "sampling": "area"
             }
+        ],
+        "file:values": [
+            {
+                "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],
+                "summary": "Measure of confidence that the Primary Land Cover label matches the training data."
+            },
+            {
+                "values": [151],
+                "summary": "Time series model identified as transition from a Grass/Shrub class to a Tree Cover class. Primary Land Cover class assignment based on secondary analysis."
+            },
+            {
+                "values": [152],
+                "summary": "Time series model identified as transition from a Tree Cover class to a Grass/Shrub class. Primary Land cover class assignment based on secondary analysis."
+            },
+            {
+                "values": [201],
+                "summary": "No stable time series models were produced for this location. Primary Land Cover was assigned the land cover class present in NLCD-2001 (cross-walked to LCMAP Level 1 classification schema, see LCMAP Science Product Guide for more information)."
+            },
+            {
+                "values": [202],
+                "summary": "Insufficient data available to extend most recent time series model past July 1st of current year. Land cover assigned the last identified cover class from earlier year."
+            },
+            {
+                "values": [211],
+                "summary": "July 1st falls in a gap between two stable time series models of the same land cover class. Primary Land Cover assigned the primary land cover class of those before/after models."
+            },
+            {
+                "values": [212],
+                "summary": "July 1st falls in a gap between two stable time series models of differing land cover class. If July 1st is before the “break date” of the earlier model, Primary Land Cover is assigned the primary land cover class of that earlier model. Otherwise, Primary Land Cover is assigned the primary land cover class of the subsequent, later model."
+            },
+            {
+                "values": [213],
+                "summary": "Insufficient data available to establish a stable time series model at the beginning of the time series prior to July 1st of the current year. Primary Land Cover assigned the primary land cover class of 1st subsequent model."
+            },
+            {
+                "values": [214],
+                "summary": "Insufficient data available to establish a new stable time series model following a break near the end of the time series prior to July 1st of the current year. Primary Land Cover assigned the last identified primary land cover class from earlier year."
+            }
         ]
     },
     "lcpconf_metadata": {
@@ -134,6 +275,44 @@
                 "nodata": 0,
                 "spatial_resolution": 30,
                 "sampling": "area"
+            }
+        ],
+        "file:values": [
+            {
+                "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],
+                "summary": "Measure of confidence that the Secondary Land Cover label matches the training data."
+            },
+            {
+                "values": [151],
+                "summary": "Time series model identified as transition from a Grass/Shrub class to a Tree Cover class in Primary Land Cover. Primary Land Cover class assignment based on secondary analysis and Secondary Land Cover class assigned logical opposite of Primary."
+            },
+            {
+                "values": [152],
+                "summary": "Time series model identified as transition from a Tree Cover class to a Grass/Shrub class in Primary Land Cover. Primary Land Cover class assignment based on secondary analysis and Secondary Land Cover class assigned logical opposite of Primary."
+            },
+            {
+                "values": [201],
+                "summary": "No stable time series models were produced for this location. Secondary Land Cover assigned the land cover class present in NLCD-2001 (cross-walked to LCMAP classification schema, see LCMAP Science Product Guide for more information)."
+            },
+            {
+                "values": [202],
+                "summary": "Insufficient data available to extend most recent time series model past July 1st of current year. Secondary Land Cover assigned the last identified secondary cover class from earlier year."
+            },
+            {
+                "values": [211],
+                "summary": "July 1st falls in a gap between two stable time series models of the same secondary land cover class. Secondary Land Cover assigned the land cover class of those before/after models."
+            },
+            {
+                "values": [212],
+                "summary": "July 1st falls in a gap between two stable time series models of differing secondary land cover classes. If July 1st is before the “break date” of the earlier model, Secondary Land Cover is assigned the secondary land cover class of the earlier model. Otherwise, Secondary Land Cover is assigned the secondary land cover class of the subsequent model."
+            },
+            {
+                "values": [213],
+                "summary": "Insufficient data available to establish a stable time series model at the beginning of the time series prior to July 1st of the current year. Secondary Land Cover assigned the secondary land cover class of 1st subsequent model."
+            },
+            {
+                "values": [214],
+                "summary": "Insufficient data available to establish a new stable time series model following a break near the end of the time series prior to July 1st of the current year. Secondary Land Cover assigned the last identified secondary cover class from earlier year."
             }
         ]
     },
@@ -244,6 +423,48 @@
                 "data_type": "uint8",
                 "spatial_resolution": 30,
                 "sampling": "area"
+            }
+        ],
+        "classification:classes": [
+            {
+                "value": 0,
+                "name": "No Model",
+                "description": "No model established for July 1st of current year."
+            },
+            {
+                "value": 4,
+                "name": "Simple Model",
+                "description": "A partial, 4-coefficient harmonic model."
+            },
+            {
+                "value": 6,
+                "name": "Advanced Model",
+                "description": "A partial, 6-coefficient harmonic model."
+            },
+            {
+                "value": 8,
+                "name": "Full Model",
+                "description": "A full, 8-coefficient harmonic model."
+            },
+            {
+                "value": 14,
+                "name": "Start Fit",
+                "description": "A simple model at the beginning of a time series where sparse and/or highly variable spectral measurements prevent establishment of a harmonic model."
+            },
+            {
+                "value": 24,
+                "name": "End Fit",
+                "description": "A simple model at the end of a time series where there are insufficient observations and/or time to establish a new harmonic model following a model break."
+            },
+            {
+                "value": 44,
+                "name": "Insufficient Clear",
+                "description": "A simple model for the entire time series in cases where fewer than 25% of input observations are labeled as “Clear” or “Water” by the U.S. Landsat ARD per-pixel quality band (PIXELQA)."
+            },
+            {
+                "value": 54,
+                "name": "Persistent Snow",
+                "description": "A simple model for the entire time series in cases where 75% or more of input observations are labeled as “Snow” by the U.S. Landsat ARD per-pixel quality band (PIXELQA)."
             }
         ]
     },
