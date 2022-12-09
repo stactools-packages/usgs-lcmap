@@ -31,7 +31,7 @@ def recog(tif_path: str) -> None:
         if Path(tif_path).stem.split("_")[-1][0:2] in ["LC", "CC"]:
             args += ["-a_nodata", "0"]
         args.append(tif_path)
-        args.append(temp_tif)
+        args.append(str(temp_tif))
         call(args)
         rasterio.shutil.copy(temp_tif, tif_path, **COG_ARGS)
 

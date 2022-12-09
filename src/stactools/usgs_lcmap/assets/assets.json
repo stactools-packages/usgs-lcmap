@@ -14,6 +14,21 @@
             "metadata"
         ]
     },
+    "browse": {
+        "title": "USGS Supplied Browse Image",
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "roles": [
+            "data"
+        ],
+        "raster:bands": [
+            {
+                "data_type": "uint8",
+                "nodata": 0,
+                "spatial_resolution": 30,
+                "sampling": "area"
+            }
+        ]
+    },
     "dates": {
         "title": "Algorithm Input Data Dates",
         "description": "Landsat observation dates used as input to the CCDC algorithm.",

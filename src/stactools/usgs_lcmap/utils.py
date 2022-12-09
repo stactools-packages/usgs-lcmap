@@ -1,6 +1,5 @@
 import json
 import re
-from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -12,6 +11,8 @@ from pystac.utils import make_absolute_href
 from rasterio.warp import transform_geom
 from shapely.geometry import box, mapping, shape
 from stactools.core.io import ReadHrefModifier
+
+from . import constants
 
 
 def parse_href(href: str) -> Dict[str, Any]:
@@ -46,8 +47,8 @@ def get_asset_dict(asset_list: List[str]) -> Dict[str, Any]:
     return assets
 
 
-def get_variable_asset_info(asset_list: List[str]) -> Dict[str, str]:
-    variable = defaultdict(dict)
+def get_variable_asset_info(asset_list: List[str]) -> Dict[str, Dict[str, str]]:
+    variable: Dict[str, Dict[str, str]] = {}
     for href in asset_list:
         parsed = parse_href(href)
         product = parsed["product"].lower()
@@ -69,6 +70,7 @@ def get_variable_asset_info(asset_list: List[str]) -> Dict[str, str]:
         else:
             raise ValueError(f"Unexpected file found: '{href}.")
 
+        variable[key] = {}
         variable[key]["href"] = href
         variable[key]["production"] = (
             f"{parsed['production'][0:4]}-{parsed['production'][4:6]}-"
@@ -106,11 +108,12 @@ class Metadata:
     vertical_tile: int
     lcmap_collection: str
     proj_wkt2: str
-    proj_shape: str
-    proj_transform: str
+    proj_shape: List[int]
+    proj_transform: List[float]
 
+    @classmethod
     def from_cog(
-        href: str, read_href_modifier: Optional[ReadHrefModifier]
+        cls, href: str, read_href_modifier: Optional[ReadHrefModifier]
     ) -> "Metadata":
         if read_href_modifier:
             modified_href = read_href_modifier(href)
@@ -133,7 +136,7 @@ class Metadata:
         )
         start_datetime = f"{parsed['year']}-01-01T00:00:00Z"
         end_datetime = f"{parsed['year']}-12-31T23:59:59Z"
-        region = "CONUS" if parsed["region"] == "CU" else "Hawaii"
+        region = constants.Region[parsed["region"]].value
         lcmap_collection = f"{region} {float(parsed['version']) / 10}"
         title = (
             f"LCMAP {region} Collection {float(parsed['version']) / 10} Land "

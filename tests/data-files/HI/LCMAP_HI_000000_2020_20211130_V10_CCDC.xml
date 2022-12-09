@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+  <tile_metadata>
+    <global_metadata>
+      <data_provider>USGS/EROS</data_provider>
+      <level1_collection>01</level1_collection>
+      <version>V10</version>
+      <region>HI</region>
+      <acquisition_date>2020-07-01</acquisition_date>
+      <begin_date>2020-01-01</begin_date>
+      <end_date>2020-12-31</end_date>
+      <search_date>2020-07-01</search_date>
+      <month_num>07</month_num>
+      <record_status>good</record_status>
+      <product_id>LCMAP_HI_000000_2020_20211130_V10_CCDC.tar</product_id>
+      <production_date>20211130</production_date>
+      <checksum>13613b383c3b1fb972eb0f380fbd2b4a95c691a41c8100ad92dc8548d67882c9</checksum>
+        <bounding_coordinates>
+          <west>-161.2757720947</west>
+          <east>-159.8166198730</east>
+          <north>22.6095962524</north>
+          <south>21.2243862152</south>
+        </bounding_coordinates>
+        <projection_information datum="WGS_1984" projection="AEA" units="meters">
+          <corner_point location="UL" x="-444345.000000" y="2168895.000000"/>
+          <corner_point location="LR" x="-294345.000000" y="2018895.000000"/>
+          <corner_point location="UR" x="-294345.000000" y="2168895.000000"/>
+          <corner_point location="LL" x="-444345.000000" y="2018895.000000"/>
+          <grid_origin>UL</grid_origin>
+          <albers_proj_params>
+            <standard_parallel1>8.000000</standard_parallel1>
+            <standard_parallel2>18.000000</standard_parallel2>
+            <central_meridian>-157.000000</central_meridian>
+            <origin_latitude>3.000000</origin_latitude>
+            <false_easting>0.000000</false_easting>
+            <false_northing>0.000000</false_northing>
+        </albers_proj_params>
+      </projection_information>
+      <orientation_angle>0.000000</orientation_angle>
+      <tile_grid h="000" v="000" />
+    </global_metadata>
+  </tile_metadata>
+</metadata>

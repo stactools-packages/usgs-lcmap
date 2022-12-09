@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>U.S. Geological Survey</origin>
+        <pubdate>2021</pubdate>
+        <title>LCMAP Land Cover and Land Change</title>
+        <geoform>raster digital data</geoform>
+        <pubinfo>
+          <pubplace>Sioux Falls, SD</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.5066/P91E8M23</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>The Land Change Monitoring Assessment and Projection (LCMAP) raster dataset is a suite of five annual land surface change and five annual land cover (and land cover derivative) products.  The LCMAP approach is the foundation for an integrated land change science framework led by the U.S. Geological Survey (USGS). The data were calculated using the Continuous Change Detection and Classification (CCDC) algorithm developed by Zhu and Woodcock (2014) and are derived from a time series of satellite imagery consisting of all available cloud- and shadow-free pixels in the USGS Landsat Analysis Ready Data (ARD) archive (Dwyer and others, 2018). The CCDC methodology supports the continuous tracking and characterization of changes in land cover, and condition enabling assessments of current, historical, and future processes of change. 
+Landsat ARD, as the source data for LCMAP, are standardized Landsat data pre-processed to ensure the data meet a minimum set of requirements and are organized into a form that allows immediate analysis with a minimum of additional user effort. ARD data are provided as tiled, georegistered, surface reflectance products defined in a common equal area projection and tiled to a common grid. ARD observations must be transformed into time series vectors before further calculations using the CCDC methodology. 
+The CCDC methodology, initially developed at Boston University (Zhu and Woodcock, 2014), has been adopted and modified by USGS for LCMAP. CCDC involves harmonic modeling that characterizes the seasonality, trends, and breaks from those trends based on the time series spectral reflectance data from multiple Landsat bands (i.e., green, red, near-infrared, short-wave infrared). The CCDC approach involves two major components: change detection and classification. The change detection component utilizes available high-quality surface reflectance data in a pixel-based time series to calculate a mathematical model for the spectral response of each pixel and to estimate the dates at which the spectral time series data diverge from past responses or patterns. The basis of change detection is the comparison of clear satellite observations with model predictions.  'Divergence' (referred to as a model 'break') often is identified as the result of an abrupt change (e.g. wildfire, logging, mining, and urban development) but may also result from a gradual shift (e.g., forest regrowth, insect infestation, disease) in the spectral signal over time. Breaks are detected by CCDC by applying a criterion based on the root mean square error of the harmonic modeling. Time periods for established models are referred to as 'model segments.' After a break is identified in the time series, a new model can be established following the break provided there are enough clear observations going forward in time. 
+The classification component of CCDC involves using the coefficients of time series models as the inputs for land cover classification. The CCDC method has the capability to generate land cover for any date in the time series; the USGS has selected an annual time step for land cover classification. The suite of land cover and change products are nominally identified at a central point in the year, July 1. Classification is performed using a boosted decision tree method based on training data developed from Coastal Change Analysis Program (C-CAP) for 2010/2011 (NOAA, 2015), 2001 National Land Cover Database (NLCD; Homer et al., 2014), LANDFIRE 2010 (LF 1.2.0, 2013) Existing Vegetation Type (EVT) for Hawaii, Hawaii Statewide Agricultural Land Use Baseline 2015 (Melrose et al., 2016), National Wetlands Inventory (NWI) produced by the U.S. Fish and Wildlife Service (FWS, 2020), and Gridded Soil Survey Geographic (gSSURGO) Database for Hawaii (USDA, 2020). The land cover legend for the Primary and Secondary Land Cover products is comparable to an Anderson level 1 classifcation scheme.</abstract>
+      <purpose>The data set depicts LCMAP Hawaii CCDC Collection 1.0 raster products consisting of five land surface change and five land cover layers created to support the land change science community.</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>2000</begdate>
+          <enddate>2020</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-161.2757720947</westbc>
+        <eastbc>-159.8166198730</eastbc>
+        <northbc>22.5905647278</northbc>
+        <southbc>21.2432403564</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>environment</themekey>
+        <themekey>geoscientificInformation</themekey>
+        <themekey>imageryBaseMapsEarthCover</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>time series analysis</themekey>
+        <themekey>remote sensing</themekey>
+        <themekey>geospatial datasets</themekey>
+        <themekey>time series datasets</themekey>
+        <themekey>land use change</themekey>
+        <themekey>land use and land cover</themekey>
+      </theme>
+      <theme>
+        <themekt>NGDA Portfolio Themes</themekt>
+        <themekey>Land Use Land Cover Theme</themekey>
+        <themekey>National Geospatial Data Asset</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>Landsat</themekey>
+        <themekey>Analysis Ready Data</themekey>
+        <themekey>Land Cover</themekey>
+        <themekey>Change Detection</themekey>
+        <themekey>Earth observations</themekey>
+      </theme>
+      <place>
+        <placekt>Common geographic areas</placekt>
+        <placekey>United States</placekey>
+      </place>
+    </keywords>
+    <accconst>none</accconst>
+    <useconst>none</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Customer Service</cntper>
+          <cntorg>U.S. Geological Survey (USGS) Earth Resources Observation and Science (EROS) Center</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>47914 252Nd Street</address>
+          <city>Sioux Falls</city>
+          <state>SD</state>
+          <postal>57198</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>800-252-4547</cntvoice>
+        <cntemail>custserv@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <crossref>
+      <citeinfo>
+        <origin>Zhe Zhu</origin>
+        <origin>Curtis E. Woodcock</origin>
+        <pubdate>20140325</pubdate>
+        <title>Continuous change detection and classification of land cover using all available Landsat data</title>
+        <pubinfo>
+          <pubplace>Amsterdam</pubplace>
+          <publish>Remote Sensing of Environment</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.1016/j.rse.2014.01.011</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Pengra, B.W.</origin>
+        <origin>Stehman, S.V.</origin>
+        <origin>Horton, J.A.</origin>
+        <pubdate>2021</pubdate>
+        <title>LCMAP Hawaii Reference Data Product 2000–2019 land cover, land use and change process attributes: U.S. Geological Survey data release</title>
+        <onlink>https://doi.org/10.5066/P9X42T97</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Pengra, B.W.</origin>
+        <origin>Stehman, S.V.</origin>
+        <origin>Horton, J.A.</origin>
+        <origin>Wellington, D.F.</origin>
+        <pubdate>2021</pubdate>
+        <title>Land Change Monitoring, Assessment, and Projection (LCMAP) Collection 1.0 Annual Land Cover and Land Cover Change Validation Tables (2000–2019) for Hawaii: U.S. Geological Survey data release</title>
+        <onlink>https://doi.org/10.5066/P99X6X7K</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>U.S. Geological Survey (USGS) Earth Resources Observation and Science (EROS) Center</origin>
+        <pubdate>2021</pubdate>
+        <title>Land Change Monitoring, Assessment, and Projection (LCMAP) Hawaii Collection 1.0 Continuous Change Detection and Classification (CCDC) Algorithm Description Document (ADD)</title>
+        <onlink>https://www.usgs.gov/media/files/lcmap-hawaii-collection-10-ccdc-add</onlink>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>https://doi.org/10.5066/P99X6X7K</attraccr>
+    </attracc>
+    <logic>No formal logical accuracy tests were conducted</logic>
+    <complete>Data set is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>No formal positional accuracy tests were conducted</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>No formal positional accuracy tests were conducted</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>U.S. Geological Survey (USGS) Earth Resources Observation and Science (EROS) Center</origin>
+            <pubdate>20170510</pubdate>
+            <title>Landsat Analysis Ready Data (ARD)</title>
+            <geoform>remote-sensing image</geoform>
+            <othercit>Dwyer, J., Roy, D. P., Sauer, B., Jenkerson, C., Zhang, H., &amp; Lymburner, L. (2018). Analysis Ready Data: Enabling Analysis of the Landsat Archive. Remote Sensing, 10(9). doi:10.3390/rs10091363</othercit>
+            <onlink>https://earthexplorer.usgs.gov/</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>1982</begdate>
+              <enddate>2020</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>Landsat Collection 1 ARD</srccitea>
+        <srccontr>Continuous change detection using the surface reflectance and observation quality values</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>U.S. Geological Survey</origin>
+            <pubdate>20030901</pubdate>
+            <title>National Land Cover Database Hawaiian Zone Land Cover Layer</title>
+            <edition>1.0</edition>
+            <geoform>remote-sensing image</geoform>
+            <pubinfo>
+              <pubplace>Sioux Falls, SD</pubplace>
+              <publish>U.S. Geological Survey</publish>
+            </pubinfo>
+            <othercit>Homer, C., C. Huang, L. Yang, B. Wylie and M. Coan, 2004. Development of a 2001 national land cover database for the United States. Photogrammetric Engineering and Remote Sensing Vol.70,No.7,pp 829-840 or online at www.mrlc.gov/publications. The USGS acknowledges the support of NOAA in development of data in this zone.</othercit>
+            <onlink>http://www.mrlc.gov</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <sngdate>2001</sngdate>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>NLCD</srccitea>
+        <srccontr>Training layer label refinement</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>U.S. Geological Survey</origin>
+            <pubdate>2013</pubdate>
+            <title>LANDFIRE Existing Vegetation Type Layer for Hawaii</title>
+            <edition>1.2.0</edition>
+            <geoform>remote-sensing image</geoform>
+            <pubinfo>
+              <pubplace>Sioux Falls, SD</pubplace>
+              <publish>U.S. Geological Survey</publish>
+            </pubinfo>
+            <othercit>LANDFIRE (2013). Existing Vegetation Type Layer for Hawaii, LANDFIRE 1.2.0. U.S. Geological Survey. Available at http://landfire.cr.usgs.gov/viewer/.</othercit>
+            <onlink>http://landfire.cr.usgs.gov/viewer/</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <sngdate>2010</sngdate>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>LANDFIRE EVT</srccitea>
+        <srccontr>Training layer label refinement</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>National Oceanic and Atmospheric Administration</origin>
+            <pubdate>2015</pubdate>
+            <title>C-CAP Land Cover, Hawaii</title>
+            <geoform>remote-sensing image</geoform>
+            <pubinfo>
+              <pubplace>Charleston, SC</pubplace>
+              <publish>National Oceanic and Atmospheric Administration</publish>
+            </pubinfo>
+            <othercit>National Oceanic and Atmospheric Administration (NOAA, 2015). Office for Coastal Management. “C-CAP Land Cover, Hawaii.” Coastal Change Analysis Program (C-CAP) High-Resolution Land Cover. Charleston, SC: NOAA Office for Coastal Management. Accessed at https://www.coast.noaa.gov/htdata/raster1/landcover/bulkdownload/hires/</othercit>
+            <onlink>https://www.coast.noaa.gov/htdata/raster1/landcover/bulkdownload/hires/</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <sngdate>2010</sngdate>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>C-CAP</srccitea>
+        <srccontr>Training layer label refinement</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>U.S. Department of Agriculture (USDA) Natural Resources Conservation Service</origin>
+            <pubdate>2020</pubdate>
+            <title>Gridded Soil Survey Geographic (gSSURGO) Database for Hawaii</title>
+            <geoform>remote-sensing image</geoform>
+            <pubinfo>
+              <publish>U.S. Department of Agriculture</publish>
+            </pubinfo>
+            <othercit>U.S. Department of Agriculture (USDA) Natural Resources Conservation Service Soil Survey Staff. Gridded Soil Survey Geographic (gSSURGO) Database for Hawaii (2020). Available online at https://gdg.sc.egov.usda.gov/</othercit>
+            <onlink>https://gdg.sc.egov.usda.gov/</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <sngdate>Unknown</sngdate>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>gSSURGO</srccitea>
+        <srccontr>Training layer label refinement</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Melrose, J.</origin>
+            <origin>Perroy, R.</origin>
+            <origin>Cares, S.</origin>
+            <pubdate>2016</pubdate>
+            <title>The Statewide Agricultural Land Use Baseline 2015</title>
+            <geoform>remote-sensing image</geoform>
+            <pubinfo>
+              <publish>U.S. Department of Agriculture</publish>
+            </pubinfo>
+            <othercit>Melrose, J., Perroy, R., and Cares, S. (2016). The Statewide Agricultural Land Use Baseline 2015. Prepared for the Hawaii Department of Agriculture by the University of Hawaii at Hilo Spatial Data Analysis & Visualization (SDAV) Research Lab. https://hdoa.hawaii.gov/salub/</othercit>
+            <onlink>https://hdoa.hawaii.gov/salub/</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <sngdate>2015</sngdate>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>Statewide Agricultural Land Use Baseline 2015</srccitea>
+        <srccontr>Training layer label refinement</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>U.S. Fish and Wildlife Service</origin>
+            <pubdate>2020</pubdate>
+            <title>National Wetlands Inventory</title>
+            <geoform>remote-sensing image</geoform>
+            <pubinfo>
+              <publish>U.S. Fish and Wildlife Service</publish>
+            </pubinfo>
+            <othercit>U.S. Fish and Wildlife Service (FWS, 2020). National Wetlands Inventory. U.S. Department of the Interior, Fish and Wildlife Service, Washington, D.C. http://www.fws.gov/wetlands/</othercit>
+            <onlink>http://www.fws.gov/wetlands/</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <sngdate>Unknown</sngdate>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>NWI</srccitea>
+        <srccontr>Training layer label refinement, and classification feature</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>U.S. Geological Survey</origin>
+            <pubdate>2020</pubdate>
+            <title>3D Elevation Program 1-Arc-Second Resolution Digital Elevation Model</title>
+            <geoform>remote-sensing image</geoform>
+            <pubinfo>
+              <publish>U.S. Geological Survey</publish>
+            </pubinfo>
+            <othercit>U.S. Geological Survey (USGS, 2020). 3D Elevation Program 1-Arc-Second Resolution Digital Elevation Model (published 20200229), accessed at https://www.usgs.gov/core-science-systems/ngp/3dep/data-tools</othercit>
+            <onlink>https://www.usgs.gov/core-science-systems/ngp/3dep/data-tools</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <sngdate>Unknown</sngdate>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>3DEP</srccitea>
+        <srccontr>Feature used in classification</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Chen, T.</origin>
+            <origin>Guestrin, C.</origin>
+            <pubdate>2016</pubdate>
+            <title>XGBoost: A scalable tree boosting system</title>
+            <pubinfo>
+              <publish>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</publish>
+            </pubinfo>
+            <othercit>Chen, T. and Guestrin, C. (2016). XGBoost: A scalable tree boosting system. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, pp. 785-794. https://doi.org/10.1145/2939672.2939785</othercit>
+            <onlink>https://doi.org/10.1145/2939672.2939785</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <sngdate>Unknown</sngdate>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>XGBoost</srccitea>
+        <srccontr>Classification training and prediction</srccontr>
+      </srcinfo>
+      <procstep>
+        <procdesc>Continuous Change Detection. Landsat ARD surface reflectance (SR), brightness temperature (BT), and PixelQA data are retrieved through LCMAP data access services for the date range 2000-01-01 through 2021-01-01 (exclusive) from the LCMAP Information Warehouse and Data Store (IWDS). These data are then processed by the LCMAP implementation of the Continuous Change Detection component of the CCDC algorithm, with results stored back in the LCMAP IWDS. The full list of observation dates from ARD used for processing through Continuous Change Detection is available in the separate file LCMAP_HI_000000_20211130_V10_ACQS.txt</procdesc>
+        <srcused>Landsat Collection 1 ARD</srcused>
+        <procdate>2021</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Classification: Training Labels. A set of rules was used to define the inclusion and crosswalking of training labels for pixels within the LCMAP mapping area. Two source datasets, the C-CAP land cover and LANDFIRE EVT product, are first crosswalked to an equivalent NLCD land cover class. Pixels mapped as developed (open space or low/medium/high intensity) in all of the following products: NLCD 2001 land cover, C-CAP 2010/2011 land cover, and LANDFIRE 2010 EVT, with the resulting extent eroded by one pixel are called developed. Pixels mapped as pasture/hay in both NLCD 2001 and C-CAP 2010/2011 and not mapped as developed in LANDFIRE 2010 EVT; or, pixels mapped as cultivated crops in C-CAP 2010/2011 and not mapped as developed by NLCD 2001 or LANDFIRE 2010 EVT are called cropland. Pixels mapped as shrub/scrub in C-CAP 2010/2011, not mapped as developed, pasture/hay, or cultivated crops in NLCD 2001, not mapped as developed in LANDFIRE 2010 EVT, and not mapped as evergreen forest in both NLCD 2001 and LANDFIRE 2010 EVT; or, pixels mapped as grassland/herbaceous in C-CAP 2010/2011, not mapped as pasture/hay, cultivated crops, or developed in NLCD 2001, and not mapped as developed in LANDFIRE 2010 EVT; or, pixels mapped as shrub/scrub or grassland/herbaceous in NLCD 2001, pasture/hay in C-CAP 2010/2011, not covered by agricultural footprints (except pasture) in the 2015 Statewide Agricultural Land Use Baseline, and not mapped as developed in the LANDFIRE 2010 EVT are called grass/shrub. Pixels mapped as evergreen forest in C-CAP 2010/2011, not mapped as developed in NLCD 2001 or LANDFIRE 2010 EVT, and not mapped as shrub/scrub or grassland/herbaceous in both NLCD 2001 and LANDFIRE 2010 EVT; or, pixels mapped as woody wetland in C-CAP 2010/2011, as evergreen forest by both NLCD 2001 and LANDFIRE 2010 EVT, and having a gSSURGO PWSL value of 0 are called tree cover. Pixels mapped as open water in C-CAP 2010/2011 are called water. Pixels mapped as woody or emergent herbaceous wetlands in NLCD 2001 and C-CAP 2010/2011, and covered by NWI footprints, and not mapped as developed in LANDFIRE 2010 EVT; alternatively, pixels mapped as woody wetlands in C-CAP 2010/2011, covered by NWI footprints, not mapped as developed by NLCD 2001 or LANDFIRE 2010 EVT, and having a gSSURGO PWSL value between 50 and 999 are called wetland. Pixels mapped as barren land (rock/sand/clay) in all of the following products: NLCD 2001 land cover, C-CAP 2010/2011 land cover, and LANDFIRE 2010 EVT are called barren.</procdesc>
+        <srcused>NLCD</srcused>
+        <srcused>LANDFIRE EVT</srcused>
+        <srcused>C-CAP</srcused>
+        <srcused>gSSURGO</srcused>
+        <srcused>Statewide Agricultural Land Use Baseline 2015</srcused>
+        <procdate>2021</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Classification: Ancillary Prep. Ancillary data is comprises of USGS 3DEP 1-arc-second DEM for Hawaii, and a wetland layer derived from rasterized NWI freshwater wetland extent. Three calculated DEM derivative values (topographic slope, aspect, and position index) are also supplied as ancillary data. Slope was calculated using the maximum change in elevation between the pixel in question and the eight surrounding pixels, expressed as a continuous variable (0–90 degrees). The aspect layer identifies the downslope direction of the maximum rate of change in topographic elevation. These values indicate the compass direction that the sloped surface is facing at that pixel location. Aspect is expressed as a categorical value, with values that range from 1–16 and represent clockwise degrees from north, in intervals of 22.5 degrees (i.e., a value of 1 indicates a downslope direction of 0–22.5 degrees from north). Flat areas have no downslope direction and are given a value of –1. Position index is an indicator of the topographic context of a pixel (hilltop, valley bottom, exposed ridge, flat plain, upper or lower slope, etc.).</procdesc>
+        <srcused>3DEP</srcused>
+        <srcused>NWI</srcused>
+        <procdate>2021</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Classification: Training. Continuous Change Detection, NWI, Digital Elevation Model (DEM), DEM derived (slope, aspect, and position index), and the derived training layer are assembled for each tile and the 8 surrounding tiles for classification model training. These data are selected based on two criteria: 1) a stable time series segment which intersects the date 2010-07-01 and 2) a valid training label available. These data are then randomly sampled stratified by class. The intercepts from the change detection data are transformed into a predicted value of overall reflectance for 2010-07-01. The data are then processed by XGBoost for training, with the resulting model being stored back in the LCMAP IWDS.</procdesc>
+        <srcused>XGBoost</srcused>
+        <srcused>NWI</srcused>
+        <srcused>3DEP</srcused>
+        <procdate>2021</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Classification: Prediction. Change detection results, NWI, digital elevation model (DEM) data and derivatives (slope, aspect, and position index), and the trained classifier are retrieved from the LCMAP IWDS. For each July 1st that a time series model crosses, the intercept values from the time series model are replaced with a predicted overall reflectance, and then processed by the classifier.</procdesc>
+        <srcused>XGBoost</srcused>
+        <srcused>NWI</srcused>
+        <srcused>3DEP</srcused>
+        <procdate>2021</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Product Generation: Change detection and classification information are assembled for a specific tile. Data are then interpreted into 10 annual Land Cover/Land Change products. The complete CCDC time series model for a pixel is made up of one or more individual temporal model segments, which allows for continuous characterization of that pixel at any point in time. Time of Spectral Change and Change Magnitude are based on the calendar year, while the other 8 products are created by intersecting an annual July 1st date with the CCDC time series models. 2000 was demonstrated to be the year when ARD data density reached a sufficient level for derived time series models to provide consistent patterns and results could be generated. The end of the time series often lacks adequate information to determine if an existing model segment is stable or is in the process of changing. Therefore, the final year of the time series and products is considered provisional.</procdesc>
+        <procdate>2021</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Raster</direct>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <planar>
+        <mapproj>
+          <mapprojn>Albers Conical Equal Area</mapprojn>
+          <albers>
+            <stdparll>8.0</stdparll>
+            <stdparll>18.0</stdparll>
+            <longcm>-157.0</longcm>
+            <latprjo>3.0</latprjo>
+            <feast>0.0</feast>
+            <fnorth>0.0</fnorth>
+          </albers>
+        </mapproj>
+        <planci>
+          <plance>row and column</plance>
+          <coordrep>
+            <absres>30.0</absres>
+            <ordres>30.0</ordres>
+          </coordrep>
+          <plandu>METERS</plandu>
+        </planci>
+      </planar>
+      <geodetic>
+        <horizdn>World Geodetic System 1984 (WGS 84)</horizdn>
+        <ellips>WGS_1984</ellips>
+        <semiaxis>6378140.0</semiaxis>
+        <denflat>298.2569999999957</denflat>
+      </geodetic>
+    </horizsys>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>LCMAP_HI_000000_2020_20211130_V10_CCDC.tar</enttypl>
+        <enttypd>LCMAP Land Cover and Land Change Products</enttypd>
+        <enttypds>U.S. Geological Survey</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>SCMAG</attrlabl>
+        <attrdef>Change Magnitude. A measure of the spectral magnitude (or spectral shift) of the change found within a given year.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>3.4e38</rdommax>
+            <attrunit>Unitless</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>Customer Service</cntper>
+          <cntorg>U.S. Geological Survey (USGS) Earth Resources Observation and Science (EROS) Center</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>47914 252nd Street</address>
+          <city>Sioux Falls</city>
+          <state>SD</state>
+          <postal>57198</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>800-252-4547</cntvoice>
+        <cntemail>custserv@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty</distliab>
+    <techpreq>All Land Cover and Land Change products are delivered in tar packages (.tar)  that 'untar' (unzip) into ten individual Georeferenced Tagged Image File Format (GeoTIFF; .tif) raster files and an Extensible Markup Language (XML) (.xml) metadata file.</techpreq>
+  </distinfo>
+  <metainfo>
+    <metd>20210504</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Customer Service</cntper>
+          <cntorg>U.S. Geological Survey (USGS) Earth Resources Observation and Science (EROS) Center</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>47914 252nd Street</address>
+          <city>Sioux Falls</city>
+          <state>SD</state>
+          <postal>57198</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>800-252-4547</cntvoice>
+        <cntemail>custserv@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>

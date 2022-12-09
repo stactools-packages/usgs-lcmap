@@ -4,9 +4,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import List, Optional
 
-import pystac
-from pystac import Item
+from pystac import Collection, Item
+from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
 from pystac.extensions.projection import ProjectionExtension
+from pystac.extensions.scientific import ScientificExtension
 from stactools.core.io import ReadHrefModifier
 
 from stactools.usgs_lcmap import cog, constants, utils
@@ -17,7 +18,7 @@ logger = logging.getLogger(__name__)
 def create_item(tar_path: str, recog: bool = True) -> Item:
     """Create a STAC Item from a local TAR file. The contents of the TAR will be
     extracted and placed alongside the TAR. The existing TIF files will be
-    overwritten with reprocessed COGs if `recog` is True.
+    overwritten with new COGs if `recog` is True.
 
     Args:
         tar_path (str): Local path to a TAR archive
@@ -29,8 +30,7 @@ def create_item(tar_path: str, recog: bool = True) -> Item:
     with tarfile.open(tar_path) as tar:
         tar.extractall(path=Path(tar_path).parent)
 
-    asset_list = Path(tar_path).parent.glob("*.*")
-    asset_list = [f.as_posix() for f in asset_list]
+    asset_list = [str(f) for f in Path(tar_path).parent.glob("*.*")]
     if recog:
         for tif in [f for f in asset_list if Path(f).suffix == ".tif"]:
             cog.recog(tif)
@@ -40,7 +40,7 @@ def create_item(tar_path: str, recog: bool = True) -> Item:
 
 def create_item_from_asset_list(
     asset_list: List[str], read_href_modifier: Optional[ReadHrefModifier] = None
-) -> None:
+) -> Item:
     asset_dict = utils.get_asset_dict(asset_list)
     metadata = utils.Metadata.from_cog(asset_dict["lcpri"].href, read_href_modifier)
 
@@ -78,32 +78,42 @@ def create_item_from_asset_list(
     return item
 
 
-def create_collection(region: constants.Region) -> pystac.Collection:
+def create_collection(region: constants.Region) -> Collection:
     """Create a STAC Collection for CONUS or Hawaii.
 
     Returns:
         Collection: STAC Collection object.
     """
     if region is constants.Region.CU:
-        collection = pystac.Collection(**constants.COLLECTION_CONUS)
+        collection = Collection(**constants.COLLECTION_CONUS)
         collection.add_links([constants.ABOUT_LINK_CONUS, constants.LICENSE_LINK_CONUS])
     else:
-        collection = pystac.Collection(**constants.COLLECTION_HAWAII)
+        collection = Collection(**constants.COLLECTION_HAWAII)
         collection.add_links(
             [constants.ABOUT_LINK_HAWAII, constants.LICENSE_LINK_HAWAII]
         )
 
+    scientific = ScientificExtension.ext(collection, add_if_missing=True)
+    if region is constants.Region.CU:
+        scientific.publications = [
+            constants.PUBLICATION_COMMON,
+            constants.PUBLICATION_CONUS,
+        ]
+        scientific.doi = constants.DATA_CONUS["doi"]
+        scientific.citation = constants.DATA_CONUS["citation"]
+    else:
+        scientific.publications = [constants.PUBLICATION_COMMON]
+
     collection.providers = [constants.PROVIDER]
 
-    # TODO: item_assets
-    # TODO: stac extensions
-    # TODO: summaries?
+    item_assets_dicts = utils.load_static_asset_info()
+    for key, value in item_assets_dicts.items():
+        item_assets_dicts[key] = AssetDefinition(value)
+    item_assets = ItemAssetsExtension.ext(collection, add_if_missing=True)
+    item_assets.item_assets = item_assets_dicts
+
+    collection.stac_extensions.append(constants.RASTER_EXTENSION_V11)
+    collection.stac_extensions.append(constants.CLASSIFICATION_EXTENSION_V11)
+    collection.stac_extensions.append(constants.FILE_EXTENSION_V21)
 
     return collection
-
-
-if __name__ == "__main__":
-    tar_path = "/Users/pjh/dev/usgs-lcmap/tests/data-files/LCMAP/CONUS/LCMAP_CU_002004_2021_20220723_V13_CCDC.tar"
-    item = create_item(tar_path=tar_path, recog=False)
-    import json
-    print(json.dumps(item.to_dict(), indent=4))

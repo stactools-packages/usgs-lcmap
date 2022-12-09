@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 from typing import Any, Dict
 
 import pystac
+from pystac.extensions.scientific import Publication
 
 
 class Region(str, enum.Enum):
@@ -11,7 +12,9 @@ class Region(str, enum.Enum):
 
 
 RASTER_EXTENSION_V11 = "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
-CLASSIFICATION_EXTENSION_V11 = "https://stac-extensions.github.io/classification/v1.1.0/schema.json"
+CLASSIFICATION_EXTENSION_V11 = (
+    "https://stac-extensions.github.io/classification/v1.1.0/schema.json"
+)
 FILE_EXTENSION_V21 = "https://stac-extensions.github.io/file/v2.1.0/schema.json"
 
 PROVIDER = pystac.Provider(
@@ -24,6 +27,8 @@ PROVIDER = pystac.Provider(
     ],
     url="https://www.usgs.gov/special-topics/lcmap",
 )
+
+KEYWORDS = ["USGS", "LCMAP", "Land Cover", "Land Cover Change"]
 
 LICENSE_LINK_CONUS = pystac.Link(
     rel="license",
@@ -50,10 +55,21 @@ ABOUT_LINK_HAWAII = pystac.Link(
     media_type="text/html",
 )
 
-KEYWORDS = ["USGS", "LCMAP", "Land Cover", "Land Cover Change", "United States"]
+PUBLICATION_COMMON = Publication(
+    doi="10.1016/j.rse.2019.111356",
+    citation="Brown, J.F., Tollerud, H.J., Barber, C.P., Zhou, Q., Dwyer, J.L., Vogelmann, J.E., Loveland, T.R., Woodcock, C.E., Stehman, S.V., Zhu, Z., Pengra, B.W., Smith, K., Horton, J.A., Xian, G., Auch, R.F., Sohl, T.L., Sayler, K.L., Gallant, A.L., Zelenak, D., Reker, R.R., and Rover, J., 2020, Lessons learned implementing an operational continuous United States national land change monitoring capability—The Land Change Monitoring, Assessment, and Projection (LCMAP) approach: Remote Sensing of Environment, v. 238, article 111356",  # noqa
+)
+PUBLICATION_CONUS = Publication(
+    doi="10.1016/j.rse.2014.01.011",
+    citation="Zhu, Z., and Woodcock, C.E., 2014, Continuous change detection and classification of land cover using all available Landsat data: Remote Sensing of Environment, v. 144, p. 152-171",  # noqa
+)
+DATA_CONUS = {
+    "doi": "10.5066/P9C46NG0",
+    "citation": "U.S. Geological Survey (USGS), 2022, Land Change Monitoring, Assessment, and Projection (LCMAP) Collection 1.3 Science Products for the Conterminous United States: USGS data release",  # noqa
+}
 
 EXTENTS_CONUS = pystac.Extent(
-    pystac.SpatialExtent([[-180.0, 90.0, 180.0, -90.0]]),  # UPDATE!
+    pystac.SpatialExtent([[-129.277320, 21.805095, -63.118430, 52.921720]]),
     pystac.TemporalExtent(
         [
             [
@@ -64,7 +80,7 @@ EXTENTS_CONUS = pystac.Extent(
     ),
 )
 EXTENTS_HAWAII = pystac.Extent(
-    pystac.SpatialExtent([[-180.0, 90.0, 180.0, -90.0]]),  # UPDATE!
+    pystac.SpatialExtent([[-161.275770, 18.505136, -154.058649, 22.624478]]),
     pystac.TemporalExtent(
         [
             [
@@ -74,6 +90,18 @@ EXTENTS_HAWAII = pystac.Extent(
         ]
     ),
 )
+SUMMARIES_CONUS = pystac.Summaries(
+    {
+        "usgs-lcmap:horizontal_tile": pystac.RangeSummary(1, 32),
+        "usgs-lcmap:vertical_tile": pystac.RangeSummary(0, 20),
+    }
+)
+SUMMARIES_HAWAII = pystac.Summaries(
+    {
+        "usgs-lcmap:horizontal_tile": pystac.RangeSummary(0, 4),
+        "usgs-lcmap:vertical_tile": pystac.RangeSummary(0, 2),
+    }
+)
 
 COLLECTION_CONUS: Dict[str, Any] = {
     "id": "usgs-lcmap-conus",
@@ -82,7 +110,7 @@ COLLECTION_CONUS: Dict[str, Any] = {
         "Land cover mapping and change monitoring from the U.S. Geological Survey's "
         "Earth Resources Observation and Science (EROS) Center. LCMAP Science Products "
         "are developed by applying time-series modeling to U.S. Landsat Analysis Ready "
-        "Data (ARD) to detect change. An application of the Continuous. All available "
+        "Data (ARD) to detect change. All available "
         "clear U.S. Landsat ARD observations are fit to a harmonic model to predict "
         "future Landsat-like surface reflectance. Where Landsat surface reflectance "
         "observations differ significantly from those predictions, a change is "
@@ -93,8 +121,9 @@ COLLECTION_CONUS: Dict[str, Any] = {
         "for years 1985-2021."
     ),
     "license": "proprietary",
-    "keywords": KEYWORDS,
+    "keywords": KEYWORDS + ["CONUS"],
     "extent": EXTENTS_CONUS,
+    "summaries": SUMMARIES_CONUS,
 }
 COLLECTION_HAWAII: Dict[str, Any] = {
     "id": "usgs-lcmap-hawaii",
@@ -103,19 +132,18 @@ COLLECTION_HAWAII: Dict[str, Any] = {
         "Land cover mapping and change monitoring from the U.S. Geological Survey's "
         "Earth Resources Observation and Science (EROS) Center. LCMAP Science Products "
         "are developed by applying time-series modeling to U.S. Landsat Analysis Ready "
-        "Data (ARD) to detect change. An application of the Continuous. All available "
+        "Data (ARD) to detect change. All available "
         "clear U.S. Landsat ARD observations are fit to a harmonic model to predict "
         "future Landsat-like surface reflectance. Where Landsat surface reflectance "
         "observations differ significantly from those predictions, a change is "
         "identified. Attributes of the resulting model sequences (e.g., start/end "
         "dates, residuals, model coefficients) are then used to produce a set of "
         "land surface change products and as inputs to the subsequent classification "
-        "to thematic land cover. LCMAP Hawaii Collection 1.0 products were released "
+        "to thematic land cover. LCMAP Hawaii Collection 1.0 was released "
         "in January 2022 for years 2000-2020."
     ),
     "license": "proprietary",
-    "keywords": KEYWORDS,
+    "keywords": KEYWORDS + ["Hawaii"],
     "extent": EXTENTS_HAWAII,
+    "summaries": SUMMARIES_HAWAII,
 }
-
-ITEM_ASSETS = ""

@@ -1,0 +1,28 @@
+{
+  "type": "Catalog",
+  "id": "usgs-lcmap",
+  "stac_version": "1.0.0",
+  "description": "The LCMAP project provides an integrated suite of annual land cover and land surface change products for the conterminous United States and Hawaii based on time series data from the Landsat record. LCMAP Science Products are based on the USGS implementation of the Continuous Change Detection and Classification (CCDC) algorithm.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./catalog.json",
+      "type": "application/json",
+      "title": "USGS LCMAP Science Products"
+    },
+    {
+      "rel": "child",
+      "href": "./usgs-lcmap-conus/collection.json",
+      "type": "application/json",
+      "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for CONUS"
+    },
+    {
+      "rel": "child",
+      "href": "./usgs-lcmap-hawaii/collection.json",
+      "type": "application/json",
+      "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for Hawaii"
+    }
+  ],
+  "stac_extensions": [],
+  "title": "USGS LCMAP Science Products"
+}

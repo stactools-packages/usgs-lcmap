@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+  <tile_metadata>
+    <global_metadata>
+      <data_provider>USGS/EROS</data_provider>
+      <level1_collection>01</level1_collection>
+      <version>V13</version>
+      <region>CU</region>
+      <acquisition_date>1999-07-01</acquisition_date>
+      <begin_date>1999-01-01</begin_date>
+      <end_date>1999-12-31</end_date>
+      <search_date>1999-07-01</search_date>
+      <month_num>07</month_num>
+      <record_status>good</record_status>
+      <product_id>LCMAP_CU_001004_1999_20220723_V13_CCDC.tar</product_id>
+      <production_date>20220723</production_date>
+      <checksum>6079d5e743a2bb8855e0a5ea21be5d1bd4d4c9ea5e2c2a7e658ce5fedf3b2bd1</checksum>
+        <bounding_coordinates>
+          <west>-126.7058486938</west>
+          <east>-124.3637542725</east>
+          <north>44.2968864441</north>
+          <south>42.6066131592</south>
+        </bounding_coordinates>
+        <projection_information datum="WGS_1984" projection="AEA" units="meters">
+          <corner_point location="UL" x="-2415585.000000" y="2714805.000000"/>
+          <corner_point location="LR" x="-2265585.000000" y="2564805.000000"/>
+          <corner_point location="UR" x="-2265585.000000" y="2714805.000000"/>
+          <corner_point location="LL" x="-2415585.000000" y="2564805.000000"/>
+          <grid_origin>UL</grid_origin>
+          <albers_proj_params>
+            <standard_parallel1>29.500000</standard_parallel1>
+            <standard_parallel2>45.500000</standard_parallel2>
+            <central_meridian>-96.000000</central_meridian>
+            <origin_latitude>23.000000</origin_latitude>
+            <false_easting>0.000000</false_easting>
+            <false_northing>0.000000</false_northing>
+        </albers_proj_params>
+      </projection_information>
+      <orientation_angle>0.000000</orientation_angle>
+      <tile_grid h="001" v="004" />
+    </global_metadata>
+  </tile_metadata>
+</metadata>

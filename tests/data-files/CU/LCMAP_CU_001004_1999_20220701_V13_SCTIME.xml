@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>U.S. Geological Survey</origin>
+        <pubdate>2022</pubdate>
+        <title>LCMAP Land Cover and Land Change</title>
+        <geoform>raster digital data</geoform>
+        <pubinfo>
+          <pubplace>Sioux Falls, SD</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.5066/P9C46NG0</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>The Land Change Monitoring Assessment and Projection (LCMAP) raster dataset is a suite of five annual land surface change and five annual land cover (and land cover derivative) products.  The LCMAP approach is the foundation for an integrated land change science framework led by the U.S. Geological Survey (USGS). The data were calculated using the Continuous Change Detection and Classification (CCDC) algorithm developed by Zhu and Woodcock (2014) and are derived from a time series of satellite imagery consisting of all available cloud- and shadow-free pixels in the USGS Landsat Analysis Ready Data (ARD) archive (Dwyer and others, 2018). The CCDC methodology supports the continuous tracking and characterization of changes in land cover, and condition enabling assessments of current, historical, and future processes of change. 
+Landsat ARD, as the source data for LCMAP, are standardized Landsat data pre-processed to ensure the data meet a minimum set of requirements and are organized into a form that allows immediate analysis with a minimum of additional user effort. ARD data are provided as tiled, georegistered, surface reflectance products defined in a common equal area projection and tiled to a common grid. ARD observations must be transformed into time series vectors before further calculations using the CCDC methodology. 
+The CCDC methodology, initially developed at Boston University (Zhu and Woodcock, 2014), has been adopted and modified by USGS for LCMAP. CCDC involves harmonic modeling that characterizes the seasonality, trends, and breaks from those trends based on the time series spectral reflectance data from multiple Landsat bands (i.e., green, red, near-infrared, short-wave infrared). The CCDC approach involves two major components: change detection and classification. The change detection component utilizes available high-quality surface reflectance data in a pixel-based time series to calculate a mathematical model for the spectral response of each pixel and to estimate the dates at which the spectral time series data diverge from past responses or patterns. The basis of change detection is the comparison of clear satellite observations with model predictions.  'Divergence' (referred to as a model 'break') often is identified as the result of an abrupt change (e.g. wildfire, logging, mining, and urban development) but may also result from a gradual shift (e.g., forest regrowth, insect infestation, disease) in the spectral signal over time. Breaks are detected by CCDC by applying a criterion based on the root mean square error of the harmonic modeling. Time periods for established models are referred to as 'model segments.' After a break is identified in the time series, a new model can be established following the break provided there are enough clear observations going forward in time. 
+The classification component of CCDC involves using the coefficients of time series models as the inputs for land cover classification. The CCDC method has the capability to generate land cover for any date in the time series; the USGS has selected an annual time step for land cover classification. The suite of land cover and change products are nominally identified at a central point in the year, July 1. Classification is performed using a boosted decision tree method based on training data developed from 2001 NLCD land cover classes (Homer and others, 2007). The land cover legend for the Primary and Secondary Land Cover products is comparable to an Anderson level 1 classification scheme.</abstract>
+      <purpose>The data set depicts LCMAP CCDC Collection v1.3 raster products consisting of five land surface change and five land cover layers created to support the land change science community.</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>1985</begdate>
+          <enddate>2021</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-126.7058486938</westbc>
+        <eastbc>-124.3637542725</eastbc>
+        <northbc>43.8817253113</northbc>
+        <southbc>43.0132064819</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>NGDA Portfolio Themes</themekt>
+        <themekey>Land Use Land Cover Theme</themekey>
+        <themekey>National Geospatial Data Asset</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>time series</themekey>
+        <themekey>Landsat</themekey>
+        <themekey>Analysis Ready Data</themekey>
+        <themekey>Land Cover</themekey>
+        <themekey>Change Detection</themekey>
+        <themekey>Earth observations</themekey>
+      </theme>
+      <place>
+        <placekt>Common geographic areas</placekt>
+        <placekey>United States</placekey>
+      </place>
+    </keywords>
+    <accconst>none</accconst>
+    <useconst>none</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Customer Service</cntper>
+          <cntorg>U.S. Geological Survey (USGS) Earth Resources Observation and Science (EROS) Center</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>47914 252Nd Street</address>
+          <city>Sioux Falls</city>
+          <state>SD</state>
+          <postal>57198</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>800-252-4547</cntvoice>
+        <cntemail>custserv@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <crossref>
+      <citeinfo>
+        <origin>Zhe Zhu</origin>
+        <origin>Curtis E. Woodcock</origin>
+        <pubdate>20140325</pubdate>
+        <title>Continuous change detection and classification of land cover using all available Landsat data</title>
+        <pubinfo>
+          <pubplace>Amsterdam</pubplace>
+          <publish>Remote Sensing of Environment</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.1016/j.rse.2014.01.011</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>John L. Dwyer</origin>
+        <origin>David P. Roy</origin>
+        <origin>Brian Sauer</origin>
+        <origin>Calli B. Jenkerson</origin>
+        <origin>Hankui K. Zhang</origin>
+        <origin>Leo Lymburner</origin>
+        <pubdate>20180828</pubdate>
+        <title>Analysis Ready Data: Enabling Analysis of the Landsat Archive</title>
+        <pubinfo>
+          <pubplace>Basel, Switzerland</pubplace>
+          <publish>Remote Sensing</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.3390/rs10091363</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Collin G. Homer</origin>
+        <origin>Chengquan Huang</origin>
+        <origin>Limin Yang</origin>
+        <origin>Bruce K. Wyle</origin>
+        <origin>Michael J. Coan</origin>
+        <pubdate>2004</pubdate>
+        <title>Development of a 2001 National Landcover Database for the United States</title>
+        <pubinfo>
+          <pubplace>Bethesda, MD. USA</pubplace>
+          <publish>Photogrammetric Engineering and Remote Sensing</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.14358/PERS.70.7.829</onlink>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>No formal attribute accuracy tests were conducted</attraccr>
+    </attracc>
+    <logic>No formal logical accuracy tests were conducted</logic>
+    <complete>Data set is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>No formal positional accuracy tests were conducted</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>No formal positional accuracy tests were conducted</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>An Algorithm Description Document (ADD) for the LCMAP implementation of CCDC Collection v1.3 can be found at: https://www.usgs.gov/media/files/lcmap-collection-13-ccdc-add</procdesc>
+        <procdate>Unknown</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Continuous Change Detection. Landsat ARD surface reflectance (SR), brightness temperature (BT), and PixelQA data are retrieved through LCMAP data access services for the date range 1982-01-01 through 2022-01-01 (exclusive) from the LCMAP Information Warehouse and Data Store (IWDS). These data are then processed by the LCMAP implementation of the Continuous Change Detection component of the CCDC algorithm, with results stored back in the LCMAP IWDS. The full list of observation dates from ARD used for processing through Continuous Change Detection is available in the separate file LCMAP_CU_001004_20220723_V13_ACQS.txt.</procdesc>
+        <procdate>Unknown</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Classification: Prediction. Change detection results, wetlands agreement (hydric soils, National Wetlands Inventory, NLCD model), digital elevation model (DEM) data and derivatives (slope, aspect, and position index), and the trained CCDC v1.0 classifier are retrieved from the LCMAP IWDS. For each July 1st that a time series model crosses, the intercept values from the time series model are replaced with a predicted overall reflectance, and then processed by the classifier. The set of per-class predictions are stored back on the LCMAP IWDS.</procdesc>
+        <procdate>Unknown</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Product Generation. Change detection and classification information is retrieved from the LCMAP IWDS for a specific tile. Data are then interpreted into 10 annual Land Cover/Land Change products. The complete CCDC time series model for a pixel is made up of one or more individual temporal model segments, which allows for continuous characterization of that pixel at any point in time. Time of Spectral Change and Change Magnitude are based on the calendar year, while the other 8 products are created by intersecting an annual July 1st date with the CCDC time series models. CCDC time series models are initiated starting in 1982 when Landsat 4 TM data becomes available in the ARD record. The sparseness of early TM data in the period of the record prevents the establishment of reasonable harmonic time series models. Therefore, no products were created for the first three years. 1985 was demonstrated to be the year when ARD data density reached a sufficient level for the derived time series models to provide consistent patterns and results could be generated. The end of the time series often lacks adequate information to determine if an existing model segment is stable or is in the process of changing. Therefore, the final year of the time series and products is considered provisional.</procdesc>
+        <procdate>Unknown</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Raster</direct>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <planar>
+        <mapproj>
+          <mapprojn>Albers Conical Equal Area</mapprojn>
+          <albers>
+            <stdparll>29.5</stdparll>
+            <stdparll>45.5</stdparll>
+            <longcm>-96.0</longcm>
+            <latprjo>23.0</latprjo>
+            <feast>0.0</feast>
+            <fnorth>0.0</fnorth>
+          </albers>
+        </mapproj>
+        <planci>
+          <plance>row and column</plance>
+          <coordrep>
+            <absres>30.0</absres>
+            <ordres>30.0</ordres>
+          </coordrep>
+          <plandu>METERS</plandu>
+        </planci>
+      </planar>
+      <geodetic>
+        <horizdn>World Geodetic System 1984 (WGS 84)</horizdn>
+        <ellips>WGS_1984</ellips>
+        <semiaxis>6378140.0</semiaxis>
+        <denflat>298.2569999999957</denflat>
+      </geodetic>
+    </horizsys>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>LCMAP_CU_001004_1999_20220723_V13_CCDC.tar</enttypl>
+        <enttypd>LCMAP Land Cover and Land Change Products</enttypd>
+        <enttypds>U.S. Geological Survey</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>SCTIME</attrlabl>
+        <attrdef>Time of Spectral Change. The day of year that a spectral change was detected for a given year.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>366</rdommax>
+            <attrunit>Days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>Customer Service</cntper>
+          <cntorg>U.S. Geological Survey (USGS) Earth Resources Observation and Science (EROS) Center</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>47914 252nd Street</address>
+          <city>Sioux Falls</city>
+          <state>SD</state>
+          <postal>57198</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>800-252-4547</cntvoice>
+        <cntemail>custserv@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty</distliab>
+    <techpreq>All Land Cover and Land Change products are delivered in tar packages (.tar)  that 'untar' (unzip) into ten individual Georeferenced Tagged Image File Format (GeoTIFF; .tif) raster files and an Extensible Markup Language (XML) (.xml) metadata file.</techpreq>
+  </distinfo>
+  <metainfo>
+    <metd>20220128</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Customer Service</cntper>
+          <cntorg>U.S. Geological Survey (USGS) Earth Resources Observation and Science (EROS) Center</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>47914 252nd Street</address>
+          <city>Sioux Falls</city>
+          <state>SD</state>
+          <postal>57198</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>800-252-4547</cntvoice>
+        <cntemail>custserv@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>
