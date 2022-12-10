@@ -18,8 +18,9 @@ COG_ARGS = {
 
 
 def recog(tif_path: str) -> None:
-    """Inserts corrected SRS, creates COG with overviews. Color table is
-    retained.
+    """Inserts a corrected SRS and nodata value (where appropriatere) into the
+    existing GeoTIFF. A new COG is then created with overviews. The existing
+    color table is retained.
 
     Args:
         tif_path (str): Path to existing COG file.
