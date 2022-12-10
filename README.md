@@ -43,7 +43,7 @@ The example Collections and Items in the `examples` directory can be created by 
 ## Installation
 
 ```shell
-pip install git+https://github.com/stactools-packages/stactools-usgs-lcmap
+pip install pip install git+https://github.com/stactools-packages/usgs-lcmap
 ```
 
 ## Command-line Usage
