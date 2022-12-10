@@ -15,7 +15,7 @@ from stactools.core.io import ReadHrefModifier
 from . import constants
 
 
-def parse_href(href: str) -> Dict[str, Any]:
+def _parse_href(href: str) -> Dict[str, Any]:
     regex = (
         r"LCMAP_(?P<region>[A-Z]{2})_(?P<htile>\d{3})(?P<vtile>\d{3})"
         r"_(?P<year>\d{4})_(?P<production>\d{8})_V(?P<version>\d{2})_"
@@ -35,9 +35,17 @@ def parse_href(href: str) -> Dict[str, Any]:
     return parsed.groupdict()
 
 
-def get_asset_dict(asset_list: List[str]) -> Dict[str, Any]:
+def get_asset_dict(asset_href_list: List[str]) -> Dict[str, Any]:
+    """Create a dictionary of STAC Assets
+
+    Args:
+        asset_href_list (List[str]): List of all asset HREFs
+
+    Returns:
+        Dict[str, Any]: Dictionary mapping STAC Item asset keys to Asset objects
+    """
     static_asset_info = load_static_asset_info()
-    variable_asset_info = get_variable_asset_info(asset_list)
+    variable_asset_info = get_variable_asset_info(asset_href_list)
     assets = {}
     for key, value in static_asset_info.items():
         asset_dict = value
@@ -47,10 +55,19 @@ def get_asset_dict(asset_list: List[str]) -> Dict[str, Any]:
     return assets
 
 
-def get_variable_asset_info(asset_list: List[str]) -> Dict[str, Dict[str, str]]:
+def get_variable_asset_info(asset_href_list: List[str]) -> Dict[str, Dict[str, str]]:
+    """Generate the non-static portions of the STAC Item assets.
+
+    Args:
+        asset_href_list (List[str]): List of all asset HREFs
+
+    Returns:
+        Dict[str, Dict[str, str]]: Dictionary mapping STAC Item asset keys to
+            a dictionary containing the asset HREF and asset production date.
+    """
     variable: Dict[str, Dict[str, str]] = {}
-    for href in asset_list:
-        parsed = parse_href(href)
+    for href in asset_href_list:
+        parsed = _parse_href(href)
         product = parsed["product"].lower()
         ext = parsed["ext"]
 
@@ -81,9 +98,9 @@ def get_variable_asset_info(asset_list: List[str]) -> Dict[str, Dict[str, str]]:
 
 
 def load_static_asset_info() -> Any:
-    """Loads a dictionary of item_assets entries for the collection.
-    Returns:
+    """Loads a dictionary of the static portions of the STAC Item assets.
 
+    Returns:
         Any: A dictionary of item_asset dictionaries
     """
     try:
@@ -96,7 +113,7 @@ def load_static_asset_info() -> Any:
         raise e
 
 
-@dataclass
+@dataclass(frozen=True)
 class Metadata:
     id: str
     title: str
@@ -129,7 +146,7 @@ class Metadata:
         geometry = transform_geom(source_crs, "EPSG:4326", source_geometry)
         bbox = list(shape(geometry).bounds)
 
-        parsed = parse_href(href)
+        parsed = _parse_href(href)
         id = (
             f"LCMAP_{parsed['region']}_{parsed['htile']}{parsed['vtile']}_"
             f"{parsed['year']}_V{parsed['version']}_CCDC"

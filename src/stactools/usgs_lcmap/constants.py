@@ -13,7 +13,7 @@ class Region(str, enum.Enum):
 
 RASTER_EXTENSION_V11 = "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
 CLASSIFICATION_EXTENSION_V11 = (
-    "https://stac-extensions.github.io/classification/v1.1.0/schema.json"
+    "https://stac-extensions.github.io/classification/v1.1.0/schema.json"  # noqa
 )
 FILE_EXTENSION_V21 = "https://stac-extensions.github.io/file/v2.1.0/schema.json"
 

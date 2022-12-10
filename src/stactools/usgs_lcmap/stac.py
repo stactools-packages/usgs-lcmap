@@ -46,6 +46,23 @@ def create_item(tar_path: str, recog: bool = True) -> Item:
 def create_item_from_asset_list(
     asset_list: List[str], read_href_modifier: Optional[ReadHrefModifier] = None
 ) -> Item:
+    """Create a STAC Item from a list of asset HREFs.
+
+    Args:
+        asset_list (List[str]): List of HREFs to the set of TAR, TIF, XML, and
+            TXT file assets.
+        read_href_modifier (Optional[ReadHrefModifier]): An optional function
+            to modify an HREF, e.g., to add a token to a URL.
+
+    Returns:
+        Item: STAC Item object
+    """
+    if len(asset_list) != 24:
+        raise ValueError(
+            f"Incorrect number of asset HREFs supplied. Expected 24, supplied "
+            f"{len(asset_list)}"
+        )
+
     asset_dict = utils.get_asset_dict(asset_list)
     metadata = utils.Metadata.from_cog(asset_dict["lcpri"].href, read_href_modifier)
 
@@ -79,7 +96,6 @@ def create_item_from_asset_list(
     item.stac_extensions.append(constants.FILE_EXTENSION_V21)
 
     # TODO: update the geometry with stactools raster footprint?
-    # TODO: add type and title to cite-as Links
 
     item.validate()
 
