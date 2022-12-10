@@ -17,20 +17,25 @@ logger = logging.getLogger(__name__)
 
 def create_item(tar_path: str, recog: bool = True) -> Item:
     """Create a STAC Item from a local TAR file. The contents of the TAR will be
-    extracted and placed alongside the TAR. The existing TIF files will be
-    overwritten with new COGs if `recog` is True.
+    extracted and placed alongside the TAR. The existing COGs will be
+    overwritten with new COGs containing overviews and a corrected CRS if
+    `recog` is True.
 
     Args:
         tar_path (str): Local path to a TAR archive
-        recog (bool): Flag to reprocess the COGs. Default is True.
+        recog (bool): Flag to reprocess the COGs. Default is True. This should
+        only be set to False when the COGs have already been extracted from
+        the TAR file and reprocessed.
 
     Returns:
         Item: STAC Item object
     """
-    with tarfile.open(tar_path) as tar:
-        tar.extractall(path=Path(tar_path).parent)
+    if recog:
+        with tarfile.open(tar_path) as tar:
+            tar.extractall(path=Path(tar_path).parent)
 
     asset_list = [str(f) for f in Path(tar_path).parent.glob("*.*")]
+
     if recog:
         for tif in [f for f in asset_list if Path(f).suffix == ".tif"]:
             cog.recog(tif)
@@ -74,6 +79,9 @@ def create_item_from_asset_list(
     item.stac_extensions.append(constants.FILE_EXTENSION_V21)
 
     # TODO: update the geometry with stactools raster footprint?
+    # TODO: add type and title to cite-as Links
+
+    item.validate()
 
     return item
 

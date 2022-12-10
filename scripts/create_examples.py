@@ -8,8 +8,7 @@ from tempfile import TemporaryDirectory
 
 from pystac import Catalog, CatalogType
 
-from stactools.usgs_lcmap import stac, constants
-
+from stactools.usgs_lcmap import constants, stac
 
 root = Path(__file__).parent.parent
 examples = root / "examples"
@@ -31,6 +30,7 @@ with TemporaryDirectory() as tmp_dir:
     conus_item = stac.create_item(
         str(data_files / "CU" / "LCMAP_CU_001004_1999_20220723_V13_CCDC.tar")
     )
+    conus_item.properties.pop("created")
     conus.add_item(conus_item)
     catalog.add_child(conus)
 
@@ -39,6 +39,7 @@ with TemporaryDirectory() as tmp_dir:
     hawaii_item = stac.create_item(
         str(data_files / "HI" / "LCMAP_HI_000000_2020_20211130_V10_CCDC.tar")
     )
+    hawaii_item.properties.pop("created")
     hawaii.add_item(hawaii_item)
     catalog.add_child(hawaii)
 
