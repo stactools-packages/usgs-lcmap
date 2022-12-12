@@ -14,21 +14,22 @@ from stactools.core.io import ReadHrefModifier
 
 from . import constants
 
+REGEX = re.compile(
+    r"LCMAP_(?P<region>[A-Z]{2})_(?P<htile>\d{3})(?P<vtile>\d{3})"
+    r"_(?P<year>\d{4})_(?P<production>\d{8})_V(?P<version>\d{2})_"
+    r"(?P<product>[A-Z]+)\.(?P<ext>[a-z]{3})$"
+)
+REGEX_TXT = re.compile(
+    r"LCMAP_(?P<region>[A-Z]{2})_(?P<htile>\d{3})(?P<vtile>\d{3})"
+    r"_(?P<production>\d{8})_V(?P<version>\d{2})_"
+    r"(?P<product>[A-Z]+)\.(?P<ext>[a-z]{3})$"
+)
+
 
 def _parse_href(href: str) -> Dict[str, Any]:
-    regex = (
-        r"LCMAP_(?P<region>[A-Z]{2})_(?P<htile>\d{3})(?P<vtile>\d{3})"
-        r"_(?P<year>\d{4})_(?P<production>\d{8})_V(?P<version>\d{2})_"
-        r"(?P<product>[A-Z]+)\.(?P<ext>[a-z]{3})$"
-    )
-    regex_txt = (
-        r"LCMAP_(?P<region>[A-Z]{2})_(?P<htile>\d{3})(?P<vtile>\d{3})"
-        r"_(?P<production>\d{8})_V(?P<version>\d{2})_"
-        r"(?P<product>[A-Z]+)\.(?P<ext>[a-z]{3})$"
-    )
 
     name = Path(href).name
-    parsed = re.compile(regex).match(name) or re.compile(regex_txt).match(name)
+    parsed = REGEX.match(name) or REGEX_TXT.match(name)
     if not parsed:
         raise ValueError(f"Can not parse. Unexpected file name: '{name}.")
 
