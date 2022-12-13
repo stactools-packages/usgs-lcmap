@@ -18,7 +18,7 @@ COG_ARGS = {
 
 
 def recog(tif_path: str) -> None:
-    """Inserts a corrected SRS and nodata value (where appropriatere) into the
+    """Inserts a corrected SRS and nodata value (where appropriate) into the
     existing GeoTIFF. A new COG is then created with overviews. The existing
     color table is retained.
 
@@ -28,6 +28,7 @@ def recog(tif_path: str) -> None:
     srs = CONUS_SRS if "CU" in Path(tif_path).stem else HAWAII_SRS
     with TemporaryDirectory() as tmp_dir:
         temp_tif = Path(tmp_dir) / "tmp_gtiff"
+        # An external call is required to get the SRS definition correct
         args = ["gdal_translate", "-of", "GTIFF", "-a_srs", srs]
         if Path(tif_path).stem.split("_")[-1][0:2] in ["LC", "CC"]:
             args += ["-a_nodata", "0"]
