@@ -30,24 +30,76 @@
     "coordinates": [
       [
         [
-          -159.81662085810942,
-          21.243240876741257
+          -160.2040537,
+          21.777531
         ],
         [
-          -159.83252302689345,
-          22.609597136308203
+          -160.2147412,
+          21.7806819
         ],
         [
-          -161.27577023639842,
-          22.590565494285624
+          -160.2341614,
+          21.7913773
         ],
         [
-          -161.25176797256793,
-          21.224386792436377
+          -160.2441291,
+          21.805191
         ],
         [
-          -159.81662085810942,
-          21.243240876741257
+          -160.2474146,
+          21.8141675
+        ],
+        [
+          -160.2480642,
+          21.8412093
+        ],
+        [
+          -160.2475362,
+          21.8447678
+        ],
+        [
+          -160.2299383,
+          21.884875
+        ],
+        [
+          -160.2262659,
+          21.8901112
+        ],
+        [
+          -160.1013778,
+          22.028515
+        ],
+        [
+          -160.0993724,
+          22.0293582
+        ],
+        [
+          -160.0901258,
+          22.027004
+        ],
+        [
+          -160.0878046,
+          22.0256638
+        ],
+        [
+          -160.0545868,
+          21.9951524
+        ],
+        [
+          -160.0483788,
+          21.9823754
+        ],
+        [
+          -160.0723311,
+          21.895464
+        ],
+        [
+          -160.2017559,
+          21.7778315
+        ],
+        [
+          -160.2040537,
+          21.777531
         ]
       ]
     ]
@@ -93,7 +145,7 @@
       ]
     },
     "browse": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC.tif",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20211130_V10_CCDC.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "USGS Supplied Browse Image",
       "raster:bands": [
@@ -110,7 +162,7 @@
       ]
     },
     "dates": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_20211130_V10_ACQS.txt",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_20211130_V10_ACQS.txt",
       "type": "text/plain",
       "title": "Algorithm Input Data Dates",
       "description": "Landsat observation dates used as input to the CCDC algorithm.",
@@ -120,7 +172,7 @@
       ]
     },
     "lcpri": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_LCPRI.tif",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCPRI.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Primary Land Cover",
       "description": "Land cover classification consisting of eight general land cover types. The most likely land cover according to the modeling process.",
@@ -194,7 +246,7 @@
       ]
     },
     "lcpri_metadata": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_LCPRI.xml",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCPRI.xml",
       "type": "application/xml",
       "title": "Primary Land Cover Metadata",
       "created": "2021-07-22T00:00:00Z",
@@ -203,7 +255,7 @@
       ]
     },
     "lcsec": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_LCSEC.tif",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCSEC.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Secondary Land Cover",
       "description": "Land cover classification consisting of eight general land cover types. The second most likely land cover according to the modeling process.",
@@ -277,7 +329,7 @@
       ]
     },
     "lcsec_metadata": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_LCSEC.xml",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCSEC.xml",
       "type": "application/xml",
       "title": "Secondary Land Cover Metadata",
       "created": "2021-07-22T00:00:00Z",
@@ -286,7 +338,7 @@
       ]
     },
     "lcachg": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_LCACHG.tif",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCACHG.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Annual Land Cover Change",
       "description": "Synthesis of Primary Land Cover of current and previous year identifying changes in land cover class.",
@@ -304,7 +356,7 @@
       ]
     },
     "lcachg_metadata": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_LCACHG.xml",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCACHG.xml",
       "type": "application/xml",
       "title": "Annual Land Cover Change Metadata",
       "created": "2021-07-22T00:00:00Z",
@@ -313,7 +365,7 @@
       ]
     },
     "lcpconf": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_LCPCONF.tif",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCPCONF.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Primary Land Cover Confidence",
       "description": "Provides provenance tracking and a measure of confidence that the Primary Land Cover label matches the training data.",
@@ -486,7 +538,7 @@
       ]
     },
     "lcpconf_metadata": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_LCPCONF.xml",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCPCONF.xml",
       "type": "application/xml",
       "title": "Primary Land Cover Confidence Metadata",
       "created": "2021-07-22T00:00:00Z",
@@ -495,7 +547,7 @@
       ]
     },
     "lcsconf": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_LCSCONF.tif",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCSCONF.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Secondary Land Cover Confidence",
       "description": "Provides provenance tracking and a measure of confidence that the Secondary Land Cover label matches the training data.",
@@ -668,7 +720,7 @@
       ]
     },
     "lcsconf_metadata": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_LCSCONF.xml",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCSCONF.xml",
       "type": "application/xml",
       "title": "Secondary Land Cover Confidence Metadata",
       "created": "2021-07-22T00:00:00Z",
@@ -677,7 +729,7 @@
       ]
     },
     "sctime": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_SCTIME.tif",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCTIME.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Time of Spectral Change",
       "description": "Represents the timing of a spectral change within the current product year as the day of year the change occurred.",
@@ -694,7 +746,7 @@
       ]
     },
     "sctime_metadata": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_SCTIME.xml",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCTIME.xml",
       "type": "application/xml",
       "title": "Time of Spectral Change Metadata",
       "created": "2021-07-22T00:00:00Z",
@@ -703,7 +755,7 @@
       ]
     },
     "scmag": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_SCMAG.tif",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCMAG.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Change Magnitude",
       "description": "The spectral strength or intensity of a time series model 'break' when spectral observations have diverged from the model predictions.",
@@ -720,7 +772,7 @@
       ]
     },
     "scmag_metadata": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_SCMAG.xml",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCMAG.xml",
       "type": "application/xml",
       "title": "Change Magnitude Metadata",
       "created": "2021-07-22T00:00:00Z",
@@ -729,7 +781,7 @@
       ]
     },
     "scstab": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_SCSTAB.tif",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCSTAB.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Spectral Stability Period",
       "description": "Measure of the amount of time in days that a pixel has been in its current spectral state as of July 1st. Current spectral state can refer to both during stable time series segments or a period outside of stable time series segments.",
@@ -746,7 +798,7 @@
       ]
     },
     "scstab_metadata": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_SCSTAB.xml",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCSTAB.xml",
       "type": "application/xml",
       "title": "Spectral Stability Period Metadata",
       "created": "2021-07-22T00:00:00Z",
@@ -755,7 +807,7 @@
       ]
     },
     "sclast": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_SCLAST.tif",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCLAST.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Time Since Last Change",
       "description": "Time, in days, since the last identified Spectral Change (SCTIME).",
@@ -772,7 +824,7 @@
       ]
     },
     "sclast_metadata": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_SCLAST.xml",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCLAST.xml",
       "type": "application/xml",
       "title": "Time Since Last Change Metadata",
       "created": "2021-07-22T00:00:00Z",
@@ -781,7 +833,7 @@
       ]
     },
     "scmqa": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_SCMQA.tif",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCMQA.tif",
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Model Quality",
       "description": "Information regarding the type of time series model applied to the current product year.",
@@ -840,7 +892,7 @@
       ]
     },
     "scmqa_metadata": {
-      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20210722_V10_SCMQA.xml",
+      "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCMQA.xml",
       "type": "application/xml",
       "title": "Model Quality Metadata",
       "created": "2021-07-22T00:00:00Z",

@@ -47,7 +47,7 @@ def create_usgs_lcmap_command(cli: Group) -> Command:
     )
     def create_item_command(tar_path: str, destination: str, nocog: bool) -> None:
         """Creates a STAC Item and reprocesses all COGs found in the TAR archive
-        to include overviews and a corrected CRS.
+        to include overviews and a corrected SRS.
 
         \b
         Args:

@@ -11,6 +11,8 @@ class Region(str, enum.Enum):
     HI = "Hawaii"
 
 
+FOOTPRINT_SIMPLIFICATION = 0.00045  # about 1.5 pixels (45 meters)
+
 RASTER_EXTENSION_V11 = "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
 CLASSIFICATION_EXTENSION_V11 = (
     "https://stac-extensions.github.io/classification/v1.1.0/schema.json"  # noqa

@@ -16,11 +16,18 @@ from stactools.usgs_lcmap import cog, constants, utils
 logger = logging.getLogger(__name__)
 
 
+class MissingXML(Exception):
+    ...
+
+
 def create_item(tar_path: str, recog: bool = True) -> Item:
-    """Create a STAC Item from a local TAR file. The contents of the TAR will be
-    extracted and placed alongside the TAR. The existing COGs will be
-    overwritten with new COGs containing overviews and a corrected CRS if
-    `recog` is True.
+    """Create a STAC Item from a local TAR file and sidecar XML metadata file.
+
+    If `recog` is True, the contents of the TAR will be extracted and placed in
+    a new directory alongside the TAR file and the extracted COGs overwritten
+    with new COGs containing: a corrected SRS, overviews, and (for some COGs) a
+    nodata value. If `recog` is False, the extraction and COG re-processing is
+    assumed to have previously been completed.
 
     Args:
         tar_path (str): Local path to a TAR archive
@@ -31,11 +38,17 @@ def create_item(tar_path: str, recog: bool = True) -> Item:
     Returns:
         Item: STAC Item object
     """
+    sidecar_xml = Path(tar_path).with_suffix(".xml")
+    if not sidecar_xml.exists():
+        raise MissingXML(f"Sidecar XML not found for tarfile '{tar_path}'")
+
     if recog:
         with tarfile.open(tar_path) as tar:
-            tar.extractall(path=Path(tar_path).parent)
+            tar.extractall(path=Path(tar_path[:-4]))
 
-    asset_list = [str(f) for f in Path(tar_path).parent.glob("*.*")]
+    asset_list = [str(f) for f in Path(tar_path[:-4]).glob("*.*")]
+    asset_list.append(tar_path)
+    asset_list.append(str(sidecar_xml))
 
     if recog:
         for tif in [f for f in asset_list if Path(f).suffix == ".tif"]:
@@ -97,7 +110,9 @@ def create_item_from_asset_list(
     item.stac_extensions.append(constants.FILE_EXTENSION_V21)
 
     update_geometry_from_asset_footprint(
-        item=item, asset_names=["lcpri"], simplify_tolerance=0.0003  # about 1 pixel
+        item=item,
+        asset_names=["lcpri"],
+        simplify_tolerance=constants.FOOTPRINT_SIMPLIFICATION,
     )
 
     item.validate()

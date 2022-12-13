@@ -21,7 +21,15 @@ REGEX = re.compile(
 )
 
 
-def _parse_href(href: str) -> Dict[str, Any]:
+def parse_href(href: str) -> Dict[str, Any]:
+    """Parse filename into dictionary of parts.
+
+    Args:
+        href (str): File HREF.
+
+    Returns:
+        Dict[str, Any]: Dictionary of file name parts.
+    """
     name = Path(href).name
     parsed = REGEX.match(name)
     if not parsed:
@@ -62,7 +70,7 @@ def get_variable_asset_info(asset_href_list: List[str]) -> Dict[str, Dict[str, s
     """
     variable: Dict[str, Dict[str, str]] = {}
     for href in asset_href_list:
-        parsed = _parse_href(href)
+        parsed = parse_href(href)
         product = parsed["product"].lower()
         ext = parsed["ext"]
 
@@ -145,7 +153,7 @@ class Metadata:
         )
         bbox = list(shape(geometry).bounds)
 
-        parsed = _parse_href(href)
+        parsed = parse_href(href)
         id = (
             f"LCMAP_{parsed['region']}_{parsed['htile']}{parsed['vtile']}_"
             f"{parsed['year']}_V{parsed['version']}_CCDC"
