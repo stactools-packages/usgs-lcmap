@@ -9,6 +9,7 @@ from pystac.extensions.item_assets import AssetDefinition, ItemAssetsExtension
 from pystac.extensions.projection import ProjectionExtension
 from pystac.extensions.scientific import ScientificExtension
 from stactools.core.io import ReadHrefModifier
+from stactools.core.utils.raster_footprint import update_geometry_from_asset_footprint
 
 from stactools.usgs_lcmap import cog, constants, utils
 
@@ -95,7 +96,9 @@ def create_item_from_asset_list(
     item.stac_extensions.append(constants.CLASSIFICATION_EXTENSION_V11)
     item.stac_extensions.append(constants.FILE_EXTENSION_V21)
 
-    # TODO: update the geometry with stactools raster footprint?
+    update_geometry_from_asset_footprint(
+        item=item, asset_names=["lcpri"], simplify_tolerance=0.0003  # about 1 pixel
+    )
 
     item.validate()
 
