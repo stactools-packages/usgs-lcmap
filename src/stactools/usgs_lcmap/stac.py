@@ -44,9 +44,9 @@ def create_item(tar_path: str, recog: bool = True) -> Item:
 
     if recog:
         with tarfile.open(tar_path) as tar:
-            tar.extractall(path=Path(tar_path[:-4]))
+            tar.extractall(path=Path(tar_path).with_suffix(""))
 
-    asset_list = [str(f) for f in Path(tar_path[:-4]).glob("*.*")]
+    asset_list = [str(f) for f in Path(tar_path).with_suffix("").glob("*.*")]
     asset_list.append(tar_path)
     asset_list.append(str(sidecar_xml))
 
@@ -127,10 +127,10 @@ def create_collection(region: constants.Region) -> Collection:
         Collection: STAC Collection object.
     """
     if region is constants.Region.CU:
-        collection = Collection(**constants.COLLECTION_CONUS)
+        collection = Collection(**constants.COLLECTION_CONUS_V13)
         collection.add_links([constants.ABOUT_LINK_CONUS, constants.LICENSE_LINK_CONUS])
     else:
-        collection = Collection(**constants.COLLECTION_HAWAII)
+        collection = Collection(**constants.COLLECTION_HAWAII_V10)
         collection.add_links(
             [constants.ABOUT_LINK_HAWAII, constants.LICENSE_LINK_HAWAII]
         )

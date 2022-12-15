@@ -105,8 +105,8 @@ SUMMARIES_HAWAII = pystac.Summaries(
     }
 )
 
-COLLECTION_CONUS: Dict[str, Any] = {
-    "id": "usgs-lcmap-conus",
+COLLECTION_CONUS_V13: Dict[str, Any] = {
+    "id": "usgs-lcmap-conus-v13",
     "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for CONUS",
     "description": (
         "Land cover mapping and change monitoring from the U.S. Geological Survey's "
@@ -127,8 +127,8 @@ COLLECTION_CONUS: Dict[str, Any] = {
     "extent": EXTENTS_CONUS,
     "summaries": SUMMARIES_CONUS,
 }
-COLLECTION_HAWAII: Dict[str, Any] = {
-    "id": "usgs-lcmap-hawaii",
+COLLECTION_HAWAII_V10: Dict[str, Any] = {
+    "id": "usgs-lcmap-hawaii-v10",
     "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for Hawaii",
     "description": (
         "Land cover mapping and change monitoring from the U.S. Geological Survey's "

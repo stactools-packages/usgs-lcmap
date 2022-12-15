@@ -26,7 +26,7 @@ class CommandsTest(CliTestCase):
             assert len(jsons) == 1
 
             collection = pystac.read_file(destination)
-            assert collection.id == "usgs-lcmap-conus"
+            assert collection.id == "usgs-lcmap-conus-v13"
 
             collection_dict = collection.to_dict()
             assert len(collection_dict["item_assets"]) == 24

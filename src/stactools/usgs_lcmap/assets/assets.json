@@ -30,7 +30,7 @@
         ]
     },
     "dates": {
-        "title": "Algorithm Input Data Dates",
+        "title": "Landsat Observation Dates",
         "description": "Landsat observation dates used as input to the CCDC algorithm.",
         "type": "text/plain",
         "roles": [
