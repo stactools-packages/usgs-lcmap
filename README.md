@@ -16,9 +16,9 @@
   - [scientific](https://github.com/stac-extensions/scientific)
   - [table](https://github.com/stac-extensions/table)
 - Extra fields:
-  - `usgs-lcmap:collection`: LCMAP Collection
-  - `usgs-lcmap:horizontal_tile`: LCMAP (Landsat ARD) horizontal tile number
-  - `usgs-lcmap:vertical_tile`: LCMAP (Landsat ARD) vertical tile number
+  - `usgs_lcmap:collection`: LCMAP Collection
+  - `usgs_lcmap:horizontal_tile`: LCMAP (Landsat ARD) horizontal tile number
+  - `usgs_lcmap:vertical_tile`: LCMAP (Landsat ARD) vertical tile number
 - [Browse the example in human-readable form](https://radiantearth.github.io/stac-browser/#/external/raw.githubusercontent.com/stactools-packages/usgs-lcmap/main/examples/catalog.json)
 
 ## Summary
