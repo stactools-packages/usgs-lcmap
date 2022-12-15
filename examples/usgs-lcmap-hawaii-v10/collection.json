@@ -1,253 +1,78 @@
 {
-  "type": "Feature",
+  "type": "Collection",
+  "id": "usgs-lcmap-hawaii-v10",
   "stac_version": "1.0.0",
-  "id": "LCMAP_CU_001004_1999_V13_CCDC",
-  "properties": {
-    "start_datetime": "1999-01-01T00:00:00Z",
-    "end_datetime": "1999-12-31T23:59:59Z",
-    "usgs-lcmap:collection": "CONUS 1.3",
-    "usgs-lcmap:horizontal_tile": 1,
-    "usgs-lcmap:vertical_tile": 4,
-    "title": "LCMAP CONUS Collection 1.3 Land Cover and Land Change Products for Tile 001004, Year 1999",
-    "proj:epsg": null,
-    "proj:wkt2": "PROJCS[\"AEA        WGS84\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
-    "proj:shape": [
-      5000,
-      5000
-    ],
-    "proj:transform": [
-      30.0,
-      0.0,
-      -2415585.0,
-      0.0,
-      -30.0,
-      2714805.0
-    ],
-    "datetime": null
-  },
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-      [
-        [
-          -124.4665249,
-          43.2539025
-        ],
-        [
-          -124.3637512,
-          43.0132067
-        ],
-        [
-          -124.5440181,
-          42.9728096
-        ],
-        [
-          -124.5305953,
-          42.9994418
-        ],
-        [
-          -124.5308141,
-          42.9999549
-        ],
-        [
-          -124.5331534,
-          42.9999914
-        ],
-        [
-          -124.5290893,
-          43.0068083
-        ],
-        [
-          -124.5265479,
-          43.0135641
-        ],
-        [
-          -124.5247046,
-          43.0165083
-        ],
-        [
-          -124.5203521,
-          43.029012
-        ],
-        [
-          -124.51583,
-          43.0393045
-        ],
-        [
-          -124.5130495,
-          43.0500493
-        ],
-        [
-          -124.5108255,
-          43.0539219
-        ],
-        [
-          -124.510286,
-          43.056292
-        ],
-        [
-          -124.5078429,
-          43.0596515
-        ],
-        [
-          -124.5070079,
-          43.0640558
-        ],
-        [
-          -124.5051369,
-          43.0678491
-        ],
-        [
-          -124.5083359,
-          43.074441
-        ],
-        [
-          -124.5097663,
-          43.0814298
-        ],
-        [
-          -124.5090661,
-          43.0852417
-        ],
-        [
-          -124.5147515,
-          43.0949312
-        ],
-        [
-          -124.5165115,
-          43.1026899
-        ],
-        [
-          -124.5161225,
-          43.1117743
-        ],
-        [
-          -124.5148747,
-          43.1143034
-        ],
-        [
-          -124.5158254,
-          43.1256179
-        ],
-        [
-          -124.5125446,
-          43.1333827
-        ],
-        [
-          -124.5092044,
-          43.1391924
-        ],
-        [
-          -124.5014271,
-          43.1482455
-        ],
-        [
-          -124.4943496,
-          43.153486
-        ],
-        [
-          -124.4813835,
-          43.1594819
-        ],
-        [
-          -124.4803843,
-          43.1653286
-        ],
-        [
-          -124.4777746,
-          43.1701299
-        ],
-        [
-          -124.475853,
-          43.1792756
-        ],
-        [
-          -124.4710434,
-          43.1907543
-        ],
-        [
-          -124.4652468,
-          43.1999229
-        ],
-        [
-          -124.4696787,
-          43.2084913
-        ],
-        [
-          -124.4714421,
-          43.219906
-        ],
-        [
-          -124.4698729,
-          43.2289731
-        ],
-        [
-          -124.4713602,
-          43.2379194
-        ],
-        [
-          -124.4708494,
-          43.2430948
-        ],
-        [
-          -124.4704166,
-          43.2457221
-        ],
-        [
-          -124.4678291,
-          43.2496745
-        ],
-        [
-          -124.4665249,
-          43.2539025
-        ]
-      ]
-    ]
-  },
+  "description": "Land cover mapping and change monitoring from the U.S. Geological Survey's Earth Resources Observation and Science (EROS) Center. LCMAP Science Products are developed by applying time-series modeling to U.S. Landsat Analysis Ready Data (ARD) to detect change. All available clear U.S. Landsat ARD observations are fit to a harmonic model to predict future Landsat-like surface reflectance. Where Landsat surface reflectance observations differ significantly from those predictions, a change is identified. Attributes of the resulting model sequences (e.g., start/end dates, residuals, model coefficients) are then used to produce a set of land surface change products and as inputs to the subsequent classification to thematic land cover. LCMAP Hawaii Collection 1.0 was released in January 2022 for years 2000-2020.",
   "links": [
     {
       "rel": "root",
-      "href": "../../catalog.json",
+      "href": "../catalog.json",
       "type": "application/json",
       "title": "USGS LCMAP Science Products"
     },
     {
-      "rel": "collection",
-      "href": "../collection.json",
-      "type": "application/json",
-      "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for CONUS"
+      "rel": "about",
+      "href": "https://www.usgs.gov/special-topics/lcmap/collection-1-hawaii-science-products",
+      "type": "text/html",
+      "title": "LCMAP Hawaii Science Products"
+    },
+    {
+      "rel": "license",
+      "href": "https://www.usgs.gov/special-topics/lcmap/collection-1-hawaii-science-products",
+      "type": "text/html",
+      "title": "Use of LCMAP Hawaii Science Products"
+    },
+    {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.1016/j.rse.2019.111356"
+    },
+    {
+      "rel": "item",
+      "href": "./LCMAP_HI_000000_2020_V10_CCDC/LCMAP_HI_000000_2020_V10_CCDC.json",
+      "type": "application/json"
     },
     {
       "rel": "parent",
-      "href": "../collection.json",
+      "href": "../catalog.json",
       "type": "application/json",
-      "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for CONUS"
+      "title": "USGS LCMAP Science Products"
     }
   ],
-  "assets": {
+  "stac_extensions": [
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/classification/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  ],
+  "sci:publications": [
+    {
+      "doi": "10.1016/j.rse.2019.111356",
+      "citation": "Brown, J.F., Tollerud, H.J., Barber, C.P., Zhou, Q., Dwyer, J.L., Vogelmann, J.E., Loveland, T.R., Woodcock, C.E., Stehman, S.V., Zhu, Z., Pengra, B.W., Smith, K., Horton, J.A., Xian, G., Auch, R.F., Sohl, T.L., Sayler, K.L., Gallant, A.L., Zelenak, D., Reker, R.R., and Rover, J., 2020, Lessons learned implementing an operational continuous United States national land change monitoring capability\u2014The Land Change Monitoring, Assessment, and Projection (LCMAP) approach: Remote Sensing of Environment, v. 238, article 111356"
+    }
+  ],
+  "item_assets": {
     "tar": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC.tar",
-      "type": "application/x-tar",
       "title": "Source USGS Product Bundle",
-      "created": "2022-07-23T00:00:00Z",
+      "type": "application/x-tar",
       "roles": [
         "data",
         "source"
       ]
     },
     "tar_metadata": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC.xml",
-      "type": "application/xml",
       "title": "Source USGS Product Bundle Metadata",
-      "created": "2022-07-23T00:00:00Z",
+      "type": "application/xml",
       "roles": [
         "metadata"
       ]
     },
     "browse": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220723_V13_CCDC.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "USGS Supplied Browse Image",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -255,27 +80,23 @@
           "spatial_resolution": 30,
           "sampling": "area"
         }
-      ],
-      "created": "2022-07-23T00:00:00Z",
-      "roles": [
-        "data"
       ]
     },
     "dates": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_20220723_V13_ACQS.txt",
-      "type": "text/plain",
-      "title": "Algorithm Input Data Dates",
+      "title": "Landsat Observation Dates",
       "description": "Landsat observation dates used as input to the CCDC algorithm.",
-      "created": "2022-07-23T00:00:00Z",
+      "type": "text/plain",
       "roles": [
         "metadata"
       ]
     },
     "lcpri": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_LCPRI.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Primary Land Cover",
       "description": "Land cover classification consisting of eight general land cover types. The most likely land cover according to the modeling process.",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -339,26 +160,22 @@
           "description": "Land comprised of natural occurrences of soils, sand, or rocks where less than 10% of the area is vegetated.",
           "color_hint": "b3aea3"
         }
-      ],
-      "created": "2022-07-01T00:00:00Z",
-      "roles": [
-        "data"
       ]
     },
     "lcpri_metadata": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_LCPRI.xml",
-      "type": "application/xml",
       "title": "Primary Land Cover Metadata",
-      "created": "2022-07-01T00:00:00Z",
+      "type": "application/xml",
       "roles": [
         "metadata"
       ]
     },
     "lcsec": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_LCSEC.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Secondary Land Cover",
       "description": "Land cover classification consisting of eight general land cover types. The second most likely land cover according to the modeling process.",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -422,26 +239,22 @@
           "description": "Land comprised of natural occurrences of soils, sand, or rocks where less than 10% of the area is vegetated.",
           "color_hint": "b3aea3"
         }
-      ],
-      "created": "2022-07-01T00:00:00Z",
-      "roles": [
-        "data"
       ]
     },
     "lcsec_metadata": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_LCSEC.xml",
-      "type": "application/xml",
       "title": "Secondary Land Cover Metadata",
-      "created": "2022-07-01T00:00:00Z",
+      "type": "application/xml",
       "roles": [
         "metadata"
       ]
     },
     "lcachg": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_LCACHG.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Annual Land Cover Change",
       "description": "Synthesis of Primary Land Cover of current and previous year identifying changes in land cover class.",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -449,26 +262,22 @@
           "spatial_resolution": 30,
           "sampling": "area"
         }
-      ],
-      "created": "2022-07-01T00:00:00Z",
-      "roles": [
-        "data"
       ]
     },
     "lcachg_metadata": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_LCACHG.xml",
-      "type": "application/xml",
       "title": "Annual Land Cover Change Metadata",
-      "created": "2022-07-01T00:00:00Z",
+      "type": "application/xml",
       "roles": [
         "metadata"
       ]
     },
     "lcpconf": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_LCPCONF.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Primary Land Cover Confidence",
       "description": "Provides provenance tracking and a measure of confidence that the Primary Land Cover label matches the training data.",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -631,26 +440,22 @@
           ],
           "summary": "Insufficient data available to establish a new stable time series model following a break near the end of the time series prior to July 1st of the current year. Primary Land Cover assigned the last identified primary land cover class from earlier year."
         }
-      ],
-      "created": "2022-07-01T00:00:00Z",
-      "roles": [
-        "data"
       ]
     },
     "lcpconf_metadata": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_LCPCONF.xml",
-      "type": "application/xml",
       "title": "Primary Land Cover Confidence Metadata",
-      "created": "2022-07-01T00:00:00Z",
+      "type": "application/xml",
       "roles": [
         "metadata"
       ]
     },
     "lcsconf": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_LCSCONF.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Secondary Land Cover Confidence",
       "description": "Provides provenance tracking and a measure of confidence that the Secondary Land Cover label matches the training data.",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -813,130 +618,110 @@
           ],
           "summary": "Insufficient data available to establish a new stable time series model following a break near the end of the time series prior to July 1st of the current year. Secondary Land Cover assigned the last identified secondary cover class from earlier year."
         }
-      ],
-      "created": "2022-07-01T00:00:00Z",
-      "roles": [
-        "data"
       ]
     },
     "lcsconf_metadata": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_LCSCONF.xml",
-      "type": "application/xml",
       "title": "Secondary Land Cover Confidence Metadata",
-      "created": "2022-07-01T00:00:00Z",
+      "type": "application/xml",
       "roles": [
         "metadata"
       ]
     },
     "sctime": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_SCTIME.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Time of Spectral Change",
       "description": "Represents the timing of a spectral change within the current product year as the day of year the change occurred.",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
       "raster:bands": [
         {
           "data_type": "uint16",
           "spatial_resolution": 30,
           "sampling": "area"
         }
-      ],
-      "created": "2022-07-01T00:00:00Z",
-      "roles": [
-        "data"
       ]
     },
     "sctime_metadata": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_SCTIME.xml",
-      "type": "application/xml",
       "title": "Time of Spectral Change Metadata",
-      "created": "2022-07-01T00:00:00Z",
+      "type": "application/xml",
       "roles": [
         "metadata"
       ]
     },
     "scmag": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_SCMAG.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Change Magnitude",
       "description": "The spectral strength or intensity of a time series model 'break' when spectral observations have diverged from the model predictions.",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
       "raster:bands": [
         {
           "data_type": "float32",
           "spatial_resolution": 30,
           "sampling": "area"
         }
-      ],
-      "created": "2022-07-01T00:00:00Z",
-      "roles": [
-        "data"
       ]
     },
     "scmag_metadata": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_SCMAG.xml",
-      "type": "application/xml",
       "title": "Change Magnitude Metadata",
-      "created": "2022-07-01T00:00:00Z",
+      "type": "application/xml",
       "roles": [
         "metadata"
       ]
     },
     "scstab": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_SCSTAB.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Spectral Stability Period",
       "description": "Measure of the amount of time in days that a pixel has been in its current spectral state as of July 1st. Current spectral state can refer to both during stable time series segments or a period outside of stable time series segments.",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
       "raster:bands": [
         {
           "data_type": "uint16",
           "spatial_resolution": 30,
           "sampling": "area"
         }
-      ],
-      "created": "2022-07-01T00:00:00Z",
-      "roles": [
-        "data"
       ]
     },
     "scstab_metadata": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_SCSTAB.xml",
-      "type": "application/xml",
       "title": "Spectral Stability Period Metadata",
-      "created": "2022-07-01T00:00:00Z",
+      "type": "application/xml",
       "roles": [
         "metadata"
       ]
     },
     "sclast": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_SCLAST.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Time Since Last Change",
       "description": "Time, in days, since the last identified Spectral Change (SCTIME).",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
       "raster:bands": [
         {
           "data_type": "uint16",
           "spatial_resolution": 30,
           "sampling": "area"
         }
-      ],
-      "created": "2022-07-01T00:00:00Z",
-      "roles": [
-        "data"
       ]
     },
     "sclast_metadata": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_SCLAST.xml",
-      "type": "application/xml",
       "title": "Time Since Last Change Metadata",
-      "created": "2022-07-01T00:00:00Z",
+      "type": "application/xml",
       "roles": [
         "metadata"
       ]
     },
     "scmqa": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_SCMQA.tif",
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
       "title": "Model Quality",
       "description": "Information regarding the type of time series model applied to the current product year.",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "roles": [
+        "data"
+      ],
       "raster:bands": [
         {
           "data_type": "uint8",
@@ -985,33 +770,65 @@
           "name": "persistent_snow",
           "description": "A simple model for the entire time series in cases where 75% or more of input observations are labeled as \u201cSnow\u201d by the U.S. Landsat ARD per-pixel quality band (PIXELQA)."
         }
-      ],
-      "created": "2022-07-01T00:00:00Z",
-      "roles": [
-        "data"
       ]
     },
     "scmqa_metadata": {
-      "href": "../../../tests/data-files/CU/LCMAP_CU_001004_1999_20220723_V13_CCDC/LCMAP_CU_001004_1999_20220701_V13_SCMQA.xml",
-      "type": "application/xml",
       "title": "Model Quality Metadata",
-      "created": "2022-07-01T00:00:00Z",
+      "type": "application/xml",
       "roles": [
         "metadata"
       ]
     }
   },
-  "bbox": [
-    -126.7058512445809,
-    42.60661376682222,
-    -124.36375115818733,
-    44.29688581239631
+  "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for Hawaii",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -161.27577,
+          18.505136,
+          -154.058649,
+          22.624478
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2000-01-01T00:00:00Z",
+          "2020-12-31T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "keywords": [
+    "USGS",
+    "LCMAP",
+    "Land Cover",
+    "Land Cover Change",
+    "Hawaii"
   ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
-    "https://stac-extensions.github.io/classification/v1.1.0/schema.json",
-    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+  "providers": [
+    {
+      "name": "United States Geological Survey",
+      "roles": [
+        "producer",
+        "processor",
+        "licensor",
+        "host"
+      ],
+      "url": "https://www.usgs.gov/special-topics/lcmap"
+    }
   ],
-  "collection": "usgs-lcmap-conus"
+  "summaries": {
+    "usgs_lcmap:horizontal_tile": {
+      "minimum": 0,
+      "maximum": 4
+    },
+    "usgs_lcmap:vertical_tile": {
+      "minimum": 0,
+      "maximum": 2
+    }
+  }
 }

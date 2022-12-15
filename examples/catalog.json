@@ -12,13 +12,13 @@
     },
     {
       "rel": "child",
-      "href": "./usgs-lcmap-conus/collection.json",
+      "href": "./usgs-lcmap-conus-v13/collection.json",
       "type": "application/json",
       "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for CONUS"
     },
     {
       "rel": "child",
-      "href": "./usgs-lcmap-hawaii/collection.json",
+      "href": "./usgs-lcmap-hawaii-v10/collection.json",
       "type": "application/json",
       "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for Hawaii"
     }

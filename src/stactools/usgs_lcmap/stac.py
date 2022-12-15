@@ -88,9 +88,9 @@ def create_item_from_asset_list(
         properties={
             "start_datetime": metadata.start_datetime,
             "end_datetime": metadata.end_datetime,
-            "usgs-lcmap:collection": metadata.lcmap_collection,
-            "usgs-lcmap:horizontal_tile": metadata.horizontal_tile,
-            "usgs-lcmap:vertical_tile": metadata.vertical_tile,
+            "usgs_lcmap:collection": metadata.lcmap_collection,
+            "usgs_lcmap:horizontal_tile": metadata.horizontal_tile,
+            "usgs_lcmap:vertical_tile": metadata.vertical_tile,
         },
     )
     item.common_metadata.created = datetime.now(tz=timezone.utc)
