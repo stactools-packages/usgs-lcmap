@@ -115,13 +115,13 @@
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for Hawaii"
+      "title": "USGS LCMAP Hawaii 1.0"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for Hawaii"
+      "title": "USGS LCMAP Hawaii 1.0"
     }
   ],
   "assets": {

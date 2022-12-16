@@ -107,20 +107,20 @@ SUMMARIES_HAWAII = pystac.Summaries(
 
 COLLECTION_CONUS_V13: Dict[str, Any] = {
     "id": "usgs-lcmap-conus-v13",
-    "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for CONUS",
+    "title": "USGS LCMAP CONUS 1.3",
     "description": (
-        "Land cover mapping and change monitoring from the U.S. Geological Survey's "
-        "Earth Resources Observation and Science (EROS) Center. LCMAP Science Products "
-        "are developed by applying time-series modeling to U.S. Landsat Analysis Ready "
-        "Data (ARD) to detect change. All available "
+        "Land Change Monitoring, Assessment, and Projection (LCMAP) from the U.S. "
+        "Geological Survey's Earth Resources Observation and Science Center. LCMAP "
+        "Science Products are developed by applying time-series modeling to U.S. "
+        "Landsat Analysis Ready Data (ARD) to detect change. All available "
         "clear U.S. Landsat ARD observations are fit to a harmonic model to predict "
         "future Landsat-like surface reflectance. Where Landsat surface reflectance "
         "observations differ significantly from those predictions, a change is "
         "identified. Attributes of the resulting model sequences (e.g., start/end "
         "dates, residuals, model coefficients) are then used to produce a set of "
         "land surface change products and as inputs to the subsequent classification "
-        "to thematic land cover. CONUS Collection 1.3 was released in August 2022 "
-        "for years 1985-2021."
+        "to thematic land cover. LCMAP Collection 1.3 for CONUS was released in "
+        "August 2022 for years 1985-2021."
     ),
     "license": "proprietary",
     "keywords": KEYWORDS + ["CONUS"],
@@ -129,19 +129,19 @@ COLLECTION_CONUS_V13: Dict[str, Any] = {
 }
 COLLECTION_HAWAII_V10: Dict[str, Any] = {
     "id": "usgs-lcmap-hawaii-v10",
-    "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for Hawaii",
+    "title": "USGS LCMAP Hawaii 1.0",
     "description": (
-        "Land cover mapping and change monitoring from the U.S. Geological Survey's "
-        "Earth Resources Observation and Science (EROS) Center. LCMAP Science Products "
-        "are developed by applying time-series modeling to U.S. Landsat Analysis Ready "
-        "Data (ARD) to detect change. All available "
+        "Land Change Monitoring, Assessment, and Projection (LCMAP) from the U.S. "
+        "Geological Survey's Earth Resources Observation and Science Center. LCMAP "
+        "Science Products are developed by applying time-series modeling to U.S. "
+        "Landsat Analysis Ready Data (ARD) to detect change. All available "
         "clear U.S. Landsat ARD observations are fit to a harmonic model to predict "
         "future Landsat-like surface reflectance. Where Landsat surface reflectance "
         "observations differ significantly from those predictions, a change is "
         "identified. Attributes of the resulting model sequences (e.g., start/end "
         "dates, residuals, model coefficients) are then used to produce a set of "
         "land surface change products and as inputs to the subsequent classification "
-        "to thematic land cover. LCMAP Hawaii Collection 1.0 was released "
+        "to thematic land cover. LCMAP Collection 1.0 for Hawaii was released "
         "in January 2022 for years 2000-2020."
     ),
     "license": "proprietary",

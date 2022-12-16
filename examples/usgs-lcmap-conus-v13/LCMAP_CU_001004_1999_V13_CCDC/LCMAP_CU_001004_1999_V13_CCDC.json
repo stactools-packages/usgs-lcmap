@@ -215,13 +215,13 @@
       "rel": "collection",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for CONUS"
+      "title": "USGS LCMAP CONUS 1.3"
     },
     {
       "rel": "parent",
       "href": "../collection.json",
       "type": "application/json",
-      "title": "USGS Land Change Monitoring, Assessment, and Projection (LCMAP) for CONUS"
+      "title": "USGS LCMAP CONUS 1.3"
     }
   ],
   "assets": {
