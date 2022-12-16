@@ -35,13 +35,13 @@ KEYWORDS = ["USGS", "LCMAP", "Land Cover", "Land Cover Change"]
 LICENSE_LINK_CONUS = pystac.Link(
     rel="license",
     target="https://www.usgs.gov/special-topics/lcmap/collection-13-conus-science-products",
-    title="Use of LCMAP CONUS Science Products",
+    title="Proprietary, Unrestricted",
     media_type="text/html",
 )
 LICENSE_LINK_HAWAII = pystac.Link(
     rel="license",
     target="https://www.usgs.gov/special-topics/lcmap/collection-1-hawaii-science-products",
-    title="Use of LCMAP Hawaii Science Products",
+    title="Proprietary, Unrestricted",
     media_type="text/html",
 )
 ABOUT_LINK_CONUS = pystac.Link(
