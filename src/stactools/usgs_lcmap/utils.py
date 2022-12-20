@@ -124,6 +124,7 @@ class Metadata:
     bbox: List[float]
     start_datetime: str
     end_datetime: str
+    region: constants.Region
     horizontal_tile: int
     vertical_tile: int
     lcmap_collection: str
@@ -160,10 +161,10 @@ class Metadata:
         )
         start_datetime = f"{parsed['year']}-01-01T00:00:00Z"
         end_datetime = f"{parsed['year']}-12-31T23:59:59Z"
-        region = constants.Region[parsed["region"]].value
-        lcmap_collection = f"{region} {float(parsed['version']) / 10}"
+        region = constants.Region[parsed["region"]]
+        lcmap_collection = f"{region.value} {float(parsed['version']) / 10}"
         title = (
-            f"LCMAP {region} Collection {float(parsed['version']) / 10} Land "
+            f"LCMAP {region.value} Collection {float(parsed['version']) / 10} Land "
             f"Cover and Land Change Products for Tile {parsed['htile']}"
             f"{parsed['vtile']}, Year {parsed['year']}"
         )
@@ -177,6 +178,7 @@ class Metadata:
             end_datetime=end_datetime,
             horizontal_tile=int(parsed["htile"]),
             vertical_tile=int(parsed["vtile"]),
+            region=region,
             lcmap_collection=lcmap_collection,
             proj_wkt2=source_crs.to_wkt(),
             proj_shape=source_shape,

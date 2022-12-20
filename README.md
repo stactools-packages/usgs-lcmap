@@ -10,6 +10,7 @@
 - STAC extensions used:
   - [classification](https://github.com/stac-extensions/classification)
   - [file](https://github.com/stac-extensions/file)
+  - [grid](https://github.com/stac-extensions/grid/)
   - [item-assets](https://github.com/stac-extensions/item-assets)
   - [proj](https://github.com/stac-extensions/projection/)
   - [raster](https://github.com/stac-extensions/raster)

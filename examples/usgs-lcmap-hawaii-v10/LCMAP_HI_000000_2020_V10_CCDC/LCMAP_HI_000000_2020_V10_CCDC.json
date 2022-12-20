@@ -8,6 +8,7 @@
     "usgs_lcmap:collection": "Hawaii 1.0",
     "usgs_lcmap:horizontal_tile": 0,
     "usgs_lcmap:vertical_tile": 0,
+    "grid:code": "ARDHI-000000",
     "title": "LCMAP Hawaii Collection 1.0 Land Cover and Land Change Products for Tile 000000, Year 2020",
     "proj:epsg": null,
     "proj:wkt2": "PROJCS[\"AEA        WGS84\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",3],PARAMETER[\"longitude_of_center\",-157],PARAMETER[\"standard_parallel_1\",8],PARAMETER[\"standard_parallel_2\",18],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
@@ -1753,7 +1754,8 @@
     "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
     "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
     "https://stac-extensions.github.io/classification/v1.1.0/schema.json",
-    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/grid/v1.0.0/schema.json"
   ],
   "collection": "usgs-lcmap-hawaii-v10"
 }

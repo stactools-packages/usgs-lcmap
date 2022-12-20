@@ -18,6 +18,7 @@ CLASSIFICATION_EXTENSION_V11 = (
     "https://stac-extensions.github.io/classification/v1.1.0/schema.json"  # noqa
 )
 FILE_EXTENSION_V21 = "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+GRID_EXTESION_V10 = "https://stac-extensions.github.io/grid/v1.0.0/schema.json"
 
 PROVIDER = pystac.Provider(
     name="United States Geological Survey",
