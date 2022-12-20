@@ -19,6 +19,10 @@ REGEX = re.compile(
     r"_?(?P<year>\d{4})?_(?P<production>\d{8})_V(?P<version>\d{2})_"
     r"(?P<product>[A-Z]+)\.(?P<ext>[a-z]{3})$"
 )
+REGEX_BAD = re.compile(
+    r"LCMAP_(?P<region>[A-Z]{2})_(?P<badformat>\d{10})_V(?P<version>\d{2})_"
+    r"(?P<product>[A-Z]+)\.(?P<ext>[a-z]{3})$"
+)
 
 
 def parse_href(href: str) -> Dict[str, Any]:
@@ -31,7 +35,7 @@ def parse_href(href: str) -> Dict[str, Any]:
         Dict[str, Any]: Dictionary of file name parts.
     """
     name = Path(href).name
-    parsed = REGEX.match(name)
+    parsed = REGEX.match(name) or REGEX_BAD.match(name)
     if not parsed:
         raise ValueError(f"Can not parse. Unexpected file name: '{name}.")
 
@@ -87,6 +91,8 @@ def get_variable_asset_info(asset_href_list: List[str]) -> Dict[str, Dict[str, s
             key = f"{product}_metadata"
         elif ext == "txt":
             key = "dates"
+            if parsed.get("badformat", None):
+                parsed["production"] = parsed["badformat"][2:]
         else:
             raise ValueError(f"Unexpected file found: '{href}.")
 
