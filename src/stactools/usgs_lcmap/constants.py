@@ -60,7 +60,7 @@ ABOUT_LINK_HAWAII = pystac.Link(
 
 PUBLICATION_COMMON = Publication(
     doi="10.1016/j.rse.2019.111356",
-    citation="Brown, J.F., Tollerud, H.J., Barber, C.P., Zhou, Q., Dwyer, J.L., Vogelmann, J.E., Loveland, T.R., Woodcock, C.E., Stehman, S.V., Zhu, Z., Pengra, B.W., Smith, K., Horton, J.A., Xian, G., Auch, R.F., Sohl, T.L., Sayler, K.L., Gallant, A.L., Zelenak, D., Reker, R.R., and Rover, J., 2020, Lessons learned implementing an operational continuous United States national land change monitoring capability—The Land Change Monitoring, Assessment, and Projection (LCMAP) approach: Remote Sensing of Environment, v. 238, article 111356",  # noqa
+    citation="Brown, J.F., Tollerud, H.J., Barber, C.P., Zhou, Q., Dwyer, J.L., Vogelmann, J.E., Loveland, T.R., Woodcock, C.E., Stehman, S.V., Zhu, Z., Pengra, B.W., Smith, K., Horton, J.A., Xian, G., Auch, R.F., Sohl, T.L., Sayler, K.L., Gallant, A.L., Zelenak, D., Reker, R.R., and Rover, J., 2020, Lessons learned implementing an operational continuous United States national land change monitoring capability-The Land Change Monitoring, Assessment, and Projection (LCMAP) approach: Remote Sensing of Environment, v. 238, article 111356",  # noqa
 )
 PUBLICATION_CONUS = Publication(
     doi="10.1016/j.rse.2014.01.011",

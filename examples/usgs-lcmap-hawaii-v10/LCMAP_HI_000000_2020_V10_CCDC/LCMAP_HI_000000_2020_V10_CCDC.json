@@ -1192,7 +1192,7 @@
           "values": [
             212
           ],
-          "summary": "July 1st falls in a gap between two stable time series models of differing land cover class. If July 1st is before the \u201cbreak date\u201d of the earlier model, Primary Land Cover is assigned the primary land cover class of that earlier model. Otherwise, Primary Land Cover is assigned the primary land cover class of the subsequent, later model."
+          "summary": "July 1st falls in a gap between two stable time series models of differing land cover class. If July 1st is before the 'break date' of the earlier model, Primary Land Cover is assigned the primary land cover class of that earlier model. Otherwise, Primary Land Cover is assigned the primary land cover class of the subsequent, later model."
         },
         {
           "values": [
@@ -1374,7 +1374,7 @@
           "values": [
             212
           ],
-          "summary": "July 1st falls in a gap between two stable time series models of differing secondary land cover classes. If July 1st is before the \u201cbreak date\u201d of the earlier model, Secondary Land Cover is assigned the secondary land cover class of the earlier model. Otherwise, Secondary Land Cover is assigned the secondary land cover class of the subsequent model."
+          "summary": "July 1st falls in a gap between two stable time series models of differing secondary land cover classes. If July 1st is before the 'break date' of the earlier model, Secondary Land Cover is assigned the secondary land cover class of the earlier model. Otherwise, Secondary Land Cover is assigned the secondary land cover class of the subsequent model."
         },
         {
           "values": [
@@ -1553,12 +1553,12 @@
         {
           "value": 44,
           "name": "insufficient_clear",
-          "description": "A simple model for the entire time series in cases where fewer than 25% of input observations are labeled as \u201cClear\u201d or \u201cWater\u201d by the U.S. Landsat ARD per-pixel quality band (PIXELQA)."
+          "description": "A simple model for the entire time series in cases where fewer than 25% of input observations are labeled as 'Clear' or 'Water' by the U.S. Landsat ARD per-pixel quality band (PIXELQA)."
         },
         {
           "value": 54,
           "name": "persistent_snow",
-          "description": "A simple model for the entire time series in cases where 75% or more of input observations are labeled as \u201cSnow\u201d by the U.S. Landsat ARD per-pixel quality band (PIXELQA)."
+          "description": "A simple model for the entire time series in cases where 75% or more of input observations are labeled as 'Snow' by the U.S. Landsat ARD per-pixel quality band (PIXELQA)."
         }
       ],
       "created": "2021-07-22T00:00:00Z",

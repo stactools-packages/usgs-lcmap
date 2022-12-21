@@ -56,7 +56,7 @@
   "sci:publications": [
     {
       "doi": "10.1016/j.rse.2019.111356",
-      "citation": "Brown, J.F., Tollerud, H.J., Barber, C.P., Zhou, Q., Dwyer, J.L., Vogelmann, J.E., Loveland, T.R., Woodcock, C.E., Stehman, S.V., Zhu, Z., Pengra, B.W., Smith, K., Horton, J.A., Xian, G., Auch, R.F., Sohl, T.L., Sayler, K.L., Gallant, A.L., Zelenak, D., Reker, R.R., and Rover, J., 2020, Lessons learned implementing an operational continuous United States national land change monitoring capability\u2014The Land Change Monitoring, Assessment, and Projection (LCMAP) approach: Remote Sensing of Environment, v. 238, article 111356"
+      "citation": "Brown, J.F., Tollerud, H.J., Barber, C.P., Zhou, Q., Dwyer, J.L., Vogelmann, J.E., Loveland, T.R., Woodcock, C.E., Stehman, S.V., Zhu, Z., Pengra, B.W., Smith, K., Horton, J.A., Xian, G., Auch, R.F., Sohl, T.L., Sayler, K.L., Gallant, A.L., Zelenak, D., Reker, R.R., and Rover, J., 2020, Lessons learned implementing an operational continuous United States national land change monitoring capability-The Land Change Monitoring, Assessment, and Projection (LCMAP) approach: Remote Sensing of Environment, v. 238, article 111356"
     },
     {
       "doi": "10.1016/j.rse.2014.01.011",
@@ -1114,7 +1114,7 @@
           "values": [
             212
           ],
-          "summary": "July 1st falls in a gap between two stable time series models of differing land cover class. If July 1st is before the \u201cbreak date\u201d of the earlier model, Primary Land Cover is assigned the primary land cover class of that earlier model. Otherwise, Primary Land Cover is assigned the primary land cover class of the subsequent, later model."
+          "summary": "July 1st falls in a gap between two stable time series models of differing land cover class. If July 1st is before the 'break date' of the earlier model, Primary Land Cover is assigned the primary land cover class of that earlier model. Otherwise, Primary Land Cover is assigned the primary land cover class of the subsequent, later model."
         },
         {
           "values": [
@@ -1292,7 +1292,7 @@
           "values": [
             212
           ],
-          "summary": "July 1st falls in a gap between two stable time series models of differing secondary land cover classes. If July 1st is before the \u201cbreak date\u201d of the earlier model, Secondary Land Cover is assigned the secondary land cover class of the earlier model. Otherwise, Secondary Land Cover is assigned the secondary land cover class of the subsequent model."
+          "summary": "July 1st falls in a gap between two stable time series models of differing secondary land cover classes. If July 1st is before the 'break date' of the earlier model, Secondary Land Cover is assigned the secondary land cover class of the earlier model. Otherwise, Secondary Land Cover is assigned the secondary land cover class of the subsequent model."
         },
         {
           "values": [
@@ -1451,12 +1451,12 @@
         {
           "value": 44,
           "name": "insufficient_clear",
-          "description": "A simple model for the entire time series in cases where fewer than 25% of input observations are labeled as \u201cClear\u201d or \u201cWater\u201d by the U.S. Landsat ARD per-pixel quality band (PIXELQA)."
+          "description": "A simple model for the entire time series in cases where fewer than 25% of input observations are labeled as 'Clear' or 'Water' by the U.S. Landsat ARD per-pixel quality band (PIXELQA)."
         },
         {
           "value": 54,
           "name": "persistent_snow",
-          "description": "A simple model for the entire time series in cases where 75% or more of input observations are labeled as \u201cSnow\u201d by the U.S. Landsat ARD per-pixel quality band (PIXELQA)."
+          "description": "A simple model for the entire time series in cases where 75% or more of input observations are labeled as 'Snow' by the U.S. Landsat ARD per-pixel quality band (PIXELQA)."
         }
       ]
     },
