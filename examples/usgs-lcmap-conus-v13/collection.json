@@ -1517,10 +1517,6 @@
     "usgs_lcmap:vertical_tile": {
       "minimum": 0,
       "maximum": 20
-    },
-    "usgs_lcmap:representative_year": {
-      "minimum": 1985,
-      "maximum": 2021
     }
   }
 }
