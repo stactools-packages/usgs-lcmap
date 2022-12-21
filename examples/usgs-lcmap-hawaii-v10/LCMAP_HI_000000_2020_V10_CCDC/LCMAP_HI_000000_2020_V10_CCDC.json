@@ -8,6 +8,7 @@
     "usgs_lcmap:collection": "Hawaii 1.0",
     "usgs_lcmap:horizontal_tile": 0,
     "usgs_lcmap:vertical_tile": 0,
+    "usgs_lcmap:representative_year": 2020,
     "grid:code": "ARDHI-000000",
     "title": "LCMAP Hawaii Collection 1.0 Land Cover and Land Change Products for Tile 000000, Year 2020",
     "proj:epsg": null,

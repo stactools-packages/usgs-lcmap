@@ -97,12 +97,14 @@ SUMMARIES_CONUS = pystac.Summaries(
     {
         "usgs_lcmap:horizontal_tile": pystac.RangeSummary(1, 32),
         "usgs_lcmap:vertical_tile": pystac.RangeSummary(0, 20),
+        "usgs_lcmap:representative_year": pystac.RangeSummary(1984, 2021),
     }
 )
 SUMMARIES_HAWAII = pystac.Summaries(
     {
         "usgs_lcmap:horizontal_tile": pystac.RangeSummary(0, 4),
         "usgs_lcmap:vertical_tile": pystac.RangeSummary(0, 2),
+        "usgs_lcmap:representative_year": pystac.RangeSummary(2000, 2020),
     }
 )
 

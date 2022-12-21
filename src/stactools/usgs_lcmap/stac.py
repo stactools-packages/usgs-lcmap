@@ -91,6 +91,7 @@ def create_item_from_asset_list(
             "usgs_lcmap:collection": metadata.lcmap_collection,
             "usgs_lcmap:horizontal_tile": metadata.horizontal_tile,
             "usgs_lcmap:vertical_tile": metadata.vertical_tile,
+            "usgs_lcmap:representative_year": metadata.representative_year,
             "grid:code": (
                 f"ARD{metadata.region.name}-"
                 f"{metadata.horizontal_tile:03}{metadata.vertical_tile:03}"

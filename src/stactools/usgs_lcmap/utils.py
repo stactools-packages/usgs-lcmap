@@ -133,6 +133,7 @@ class Metadata:
     region: constants.Region
     horizontal_tile: int
     vertical_tile: int
+    representative_year: int
     lcmap_collection: str
     proj_wkt2: str
     proj_shape: List[int]
@@ -184,6 +185,7 @@ class Metadata:
             end_datetime=end_datetime,
             horizontal_tile=int(parsed["htile"]),
             vertical_tile=int(parsed["vtile"]),
+            representative_year=int(parsed["year"]),
             region=region,
             lcmap_collection=lcmap_collection,
             proj_wkt2=source_crs.to_wkt(),
