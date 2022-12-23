@@ -138,6 +138,7 @@ def create_collection(region: constants.Region) -> Collection:
         collection.add_links(
             [constants.ABOUT_LINK_HAWAII, constants.LICENSE_LINK_HAWAII]
         )
+    collection.add_link(constants.DATA_ACCESS_LINK)
 
     scientific = ScientificExtension.ext(collection, add_if_missing=True)
     if region is constants.Region.CU:

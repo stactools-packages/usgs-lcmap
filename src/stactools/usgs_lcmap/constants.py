@@ -33,6 +33,12 @@ PROVIDER = pystac.Provider(
 
 KEYWORDS = ["USGS", "LCMAP", "Land Cover", "Land Cover Change"]
 
+DATA_ACCESS_LINK = pystac.Link(
+    rel="source",
+    target="https://www.usgs.gov/special-topics/lcmap/lcmap-data-access",
+    title="USGS Data Access Options",
+    media_type="text/html",
+)
 LICENSE_LINK_CONUS = pystac.Link(
     rel="license",
     target="https://www.usgs.gov/special-topics/lcmap/collection-13-conus-science-products",
