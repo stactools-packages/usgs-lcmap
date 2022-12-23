@@ -60,7 +60,7 @@ class CommandsTest(CliTestCase):
             )
             destination = os.path.join(tmp_dir, "item.json")
             result = self.run_command(
-                f"usgs-lcmap create-item {infile} {destination} -n"
+                f"usgs-lcmap create-item {infile} {destination} --nocog"
             )
             assert result.exit_code == 0, "\n{}".format(result.output)
 

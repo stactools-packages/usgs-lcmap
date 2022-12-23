@@ -20,7 +20,7 @@ class MissingXML(Exception):
     ...
 
 
-def create_item(tar_path: str, recog: bool = True) -> Item:
+def create_item(tar_path: str, recog: bool = True, notar: bool = False) -> Item:
     """Create a STAC Item from a local TAR file and sidecar XML metadata file.
 
     If `recog` is True, the contents of the TAR will be extracted and placed in
@@ -32,14 +32,16 @@ def create_item(tar_path: str, recog: bool = True) -> Item:
     Args:
         tar_path (str): Local path to a TAR archive
         recog (bool): Flag to reprocess the COGs. Default is True. This should
-        only be set to False when the COGs have already been extracted from
-        the TAR file and reprocessed.
+            only be set to False when the COGs have already been extracted from
+            the TAR file and reprocessed.
+        notar (bool): Flag to exclude the source TAR archive and sidecar XML
+            metadata file in the Item Assets.
 
     Returns:
         Item: STAC Item object
     """
     sidecar_xml = Path(tar_path).with_suffix(".xml")
-    if not sidecar_xml.exists():
+    if not sidecar_xml.exists() and not notar:
         raise MissingXML(f"Sidecar XML not found for tarfile '{tar_path}'")
 
     if recog:
@@ -47,8 +49,9 @@ def create_item(tar_path: str, recog: bool = True) -> Item:
             tar.extractall(path=Path(tar_path).with_suffix(""))
 
     asset_list = [str(f) for f in Path(tar_path).with_suffix("").glob("*.*")]
-    asset_list.append(tar_path)
-    asset_list.append(str(sidecar_xml))
+    if not notar:
+        asset_list.append(tar_path)
+        asset_list.append(str(sidecar_xml))
 
     if recog:
         for tif in [f for f in asset_list if Path(f).suffix == ".tif"]:
@@ -71,12 +74,6 @@ def create_item_from_asset_list(
     Returns:
         Item: STAC Item object
     """
-    if len(asset_list) != 24:
-        raise ValueError(
-            f"Incorrect number of asset HREFs supplied. Expected 24, supplied "
-            f"{len(asset_list)}"
-        )
-
     asset_dict = utils.get_asset_dict(asset_list)
     metadata = utils.Metadata.from_cog(asset_dict["lcpri"].href, read_href_modifier)
 
@@ -124,8 +121,13 @@ def create_item_from_asset_list(
     return item
 
 
-def create_collection(region: constants.Region) -> Collection:
+def create_collection(region: constants.Region, notar: bool = False) -> Collection:
     """Create a STAC Collection for CONUS or Hawaii.
+
+    Args:
+        region (constants.Region): Collection to create (CONUS or Hawaii)
+        notar (bool): Flag to exclude the source TAR archive and sidecar XML
+            metadata file in the ``item_assets`` list.
 
     Returns:
         Collection: STAC Collection object.
@@ -154,6 +156,9 @@ def create_collection(region: constants.Region) -> Collection:
     collection.providers = [constants.PROVIDER]
 
     item_assets_dicts = utils.load_static_asset_info()
+    if notar:
+        item_assets_dicts.pop("tar")
+        item_assets_dicts.pop("tar_metadata")
     for key, value in item_assets_dicts.items():
         item_assets_dicts[key] = AssetDefinition(value)
     item_assets = ItemAssetsExtension.ext(collection, add_if_missing=True)

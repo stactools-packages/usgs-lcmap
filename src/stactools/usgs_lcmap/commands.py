@@ -18,7 +18,14 @@ def create_usgs_lcmap_command(cli: Group) -> Command:
     @usgs_lcmap.command("create-collection", short_help="Create a STAC collection")
     @click.argument("region", type=click.Choice([r.value for r in constants.Region]))
     @click.argument("destination")
-    def create_collection_command(region: str, destination: str) -> None:
+    @click.option(
+        "--notar",
+        is_flag=True,
+        default=False,
+        show_default=True,
+        help="Do not include TAR or corresponding XML metadata in item_assets",
+    )
+    def create_collection_command(region: str, destination: str, notar: bool) -> None:
         """Creates a STAC Collection for the specified region.
 
         \b
@@ -26,7 +33,7 @@ def create_usgs_lcmap_command(cli: Group) -> Command:
             region (str): Choice of 'CONUS' or 'Hawaii'
             destination (str): An HREF for the STAC Collection JSON
         """
-        collection = stac.create_collection(constants.Region(region))
+        collection = stac.create_collection(constants.Region(region), notar=notar)
         collection.set_self_href(destination)
         collection.catalog_type = pystac.CatalogType.SELF_CONTAINED
         collection.validate()
@@ -38,14 +45,22 @@ def create_usgs_lcmap_command(cli: Group) -> Command:
     @click.argument("tar_path")
     @click.argument("destination")
     @click.option(
-        "-n",
         "--nocog",
         is_flag=True,
         default=False,
         show_default=True,
         help="Do not reprocess COGs",
     )
-    def create_item_command(tar_path: str, destination: str, nocog: bool) -> None:
+    @click.option(
+        "--notar",
+        is_flag=True,
+        default=False,
+        show_default=True,
+        help="Do not include TAR or corresponding XML metadata assets",
+    )
+    def create_item_command(
+        tar_path: str, destination: str, nocog: bool, notar: bool
+    ) -> None:
         """Creates a STAC Item and reprocesses all COGs found in the TAR archive
         to include overviews and a corrected SRS.
 
@@ -53,11 +68,9 @@ def create_usgs_lcmap_command(cli: Group) -> Command:
         Args:
             tar_path (str): Local path to a TAR archive
             destination (str): An HREF for the STAC Item JSON
-            nocog (bool): Flag to turn off COG reprocessing. Only use if COGs
-                sit alongside the TAR archive and have been reprocessed.
         """
         recog = not nocog
-        item = stac.create_item(tar_path=tar_path, recog=recog)
+        item = stac.create_item(tar_path=tar_path, recog=recog, notar=notar)
 
         item.set_self_href(destination)
         item.make_asset_hrefs_relative()

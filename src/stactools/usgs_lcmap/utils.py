@@ -55,6 +55,8 @@ def get_asset_dict(asset_href_list: List[str]) -> Dict[str, Any]:
     variable_asset_info = get_variable_asset_info(asset_href_list)
     assets = {}
     for key, value in static_asset_info.items():
+        if key not in variable_asset_info:
+            continue  # handle notar option but keep static asset ordering
         asset_dict = value
         asset_dict["href"] = make_absolute_href(variable_asset_info[key]["href"])
         asset_dict["created"] = variable_asset_info[key]["production"]
