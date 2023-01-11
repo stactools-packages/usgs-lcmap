@@ -72,9 +72,17 @@ PUBLICATION_CONUS = Publication(
     doi="10.1016/j.rse.2014.01.011",
     citation="Zhu, Z., and Woodcock, C.E., 2014, Continuous change detection and classification of land cover using all available Landsat data: Remote Sensing of Environment, v. 144, p. 152-171",  # noqa
 )
+PUBLICATION_HAWAII = Publication(
+    doi="10.1016/j.jag.2022.103015",
+    citation="Li, C., Xian, G., Wellington, D., Smith, K., Horton, J., &amp; Zhou, Q., 2022, Development of the LCMAP annual land cover product across Hawaii: International Journal of Applied Earth Observation and Geoinformation, v. 113, article 103015.",  # noqa
+)
 DATA_CONUS = {
     "doi": "10.5066/P9C46NG0",
     "citation": "U.S. Geological Survey (USGS), 2022, Land Change Monitoring, Assessment, and Projection (LCMAP) Collection 1.3 Science Products for the Conterminous United States: USGS data release",  # noqa
+}
+DATA_HAWAII = {
+    "doi": "10.5066/P91E8M23",
+    "citation": "U.S. Geological Survey (USGS), 2022, Land Change Monitoring, Assessment, and Projection (LCMAP) Collection 1.0 Science Products for Hawaii: USGS data release",  # noqa
 }
 
 EXTENTS_CONUS = pystac.Extent(

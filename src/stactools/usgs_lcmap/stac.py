@@ -151,7 +151,12 @@ def create_collection(region: constants.Region, notar: bool = False) -> Collecti
         scientific.doi = constants.DATA_CONUS["doi"]
         scientific.citation = constants.DATA_CONUS["citation"]
     else:
-        scientific.publications = [constants.PUBLICATION_COMMON]
+        scientific.publications = [
+            constants.PUBLICATION_HAWAII,
+            constants.PUBLICATION_COMMON,
+        ]
+        scientific.doi = constants.DATA_HAWAII["doi"]
+        scientific.citation = constants.DATA_HAWAII["citation"]
 
     collection.providers = [constants.PROVIDER]
 
