@@ -33,11 +33,11 @@ Creating a STAC Item will cause the TAR archive contents to be extracted to a ne
 ## STAC Examples
 
 - CONUS
-  - [Collection](examples/usgs-lcmap-conus/collection.json)
-  - [Item](examples/usgs-lcmap-conus/LCMAP_CU_001004_1999_V13_CCDC/LCMAP_CU_001004_1999_V13_CCDC.json)
+  - [Collection](examples/usgs-lcmap-conus-v13/collection.json)
+  - [Item](examples/usgs-lcmap-conus-v13/LCMAP_CU_001004_1999_V13_CCDC/LCMAP_CU_001004_1999_V13_CCDC.json)
 - Hawaii
-  - [Collection](examples/usgs-lcmap-hawaii/collection.json)
-  - [Item](examples/usgs-lcmap-hawaii/LCMAP_HI_000000_2020_V10_CCDC/LCMAP_HI_000000_2020_V10_CCDC.json)
+  - [Collection](examples/usgs-lcmap-hawaii-v10/collection.json)
+  - [Item](examples/usgs-lcmap-hawaii-v10/LCMAP_HI_000000_2020_V10_CCDC/LCMAP_HI_000000_2020_V10_CCDC.json)
 
 The example Collections and Items in the `examples` directory can be created by running `./scripts/create_examples.py`.
 
