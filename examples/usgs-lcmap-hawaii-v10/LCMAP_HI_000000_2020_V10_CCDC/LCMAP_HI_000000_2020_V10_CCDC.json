@@ -141,6 +141,7 @@
       "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC.xml",
       "type": "application/xml",
       "title": "Source USGS Product Bundle Metadata",
+      "description": "Source USGS product bundle metadata",
       "created": "2021-11-30T00:00:00Z",
       "roles": [
         "metadata"
@@ -588,6 +589,7 @@
       "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCPRI.xml",
       "type": "application/xml",
       "title": "Primary Land Cover Metadata",
+      "description": "Primary Land Cover product metadata",
       "created": "2021-07-22T00:00:00Z",
       "roles": [
         "metadata"
@@ -1007,6 +1009,7 @@
       "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCSEC.xml",
       "type": "application/xml",
       "title": "Secondary Land Cover Metadata",
+      "description": "Secondary Land Cover product metadata",
       "created": "2021-07-22T00:00:00Z",
       "roles": [
         "metadata"
@@ -1426,6 +1429,7 @@
       "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCACHG.xml",
       "type": "application/xml",
       "title": "Annual Land Cover Change Metadata",
+      "description": "Annual Land Cover Change product metadata",
       "created": "2021-07-22T00:00:00Z",
       "roles": [
         "metadata"
@@ -1608,6 +1612,7 @@
       "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCPCONF.xml",
       "type": "application/xml",
       "title": "Primary Land Cover Confidence Metadata",
+      "description": "Primary Land Cover Confidence product metadata",
       "created": "2021-07-22T00:00:00Z",
       "roles": [
         "metadata"
@@ -1790,6 +1795,7 @@
       "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_LCSCONF.xml",
       "type": "application/xml",
       "title": "Secondary Land Cover Confidence Metadata",
+      "description": "Secondary Land Cover Confidence product metadata",
       "created": "2021-07-22T00:00:00Z",
       "roles": [
         "metadata"
@@ -1816,6 +1822,7 @@
       "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCTIME.xml",
       "type": "application/xml",
       "title": "Time of Spectral Change Metadata",
+      "description": "Time of Spectral Change product metadata",
       "created": "2021-07-22T00:00:00Z",
       "roles": [
         "metadata"
@@ -1842,6 +1849,7 @@
       "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCMAG.xml",
       "type": "application/xml",
       "title": "Change Magnitude Metadata",
+      "description": "Change Magnitude product metadata",
       "created": "2021-07-22T00:00:00Z",
       "roles": [
         "metadata"
@@ -1868,6 +1876,7 @@
       "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCSTAB.xml",
       "type": "application/xml",
       "title": "Spectral Stability Period Metadata",
+      "description": "Spectral Stability Period product metadata",
       "created": "2021-07-22T00:00:00Z",
       "roles": [
         "metadata"
@@ -1894,6 +1903,7 @@
       "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCLAST.xml",
       "type": "application/xml",
       "title": "Time Since Last Change Metadata",
+      "description": "Time Since Last Change product metadata",
       "created": "2021-07-22T00:00:00Z",
       "roles": [
         "metadata"
@@ -1962,6 +1972,7 @@
       "href": "../../../tests/data-files/HI/LCMAP_HI_000000_2020_20211130_V10_CCDC/LCMAP_HI_000000_2020_20210722_V10_SCMQA.xml",
       "type": "application/xml",
       "title": "Model Quality Metadata",
+      "description": "Model Quality product metadata",
       "created": "2021-07-22T00:00:00Z",
       "roles": [
         "metadata"

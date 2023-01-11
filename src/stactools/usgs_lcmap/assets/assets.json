@@ -10,6 +10,7 @@
     },
     "tar_metadata": {
         "title": "Source USGS Product Bundle Metadata",
+        "description": "Source USGS product bundle metadata",
         "type": "application/xml",
         "roles": [
             "metadata"
@@ -449,6 +450,7 @@
     },
     "lcpri_metadata": {
         "title": "Primary Land Cover Metadata",
+        "description": "Primary Land Cover product metadata",
         "type": "application/xml",
         "roles": [
             "metadata"
@@ -864,6 +866,7 @@
     },
     "lcsec_metadata": {
         "title": "Secondary Land Cover Metadata",
+        "description": "Secondary Land Cover product metadata",
         "type": "application/xml",
         "roles": [
             "metadata"
@@ -1279,6 +1282,7 @@
     },
     "lcachg_metadata": {
         "title": "Annual Land Cover Change Metadata",
+        "description": "Annual Land Cover Change product metadata",
         "type": "application/xml",
         "roles": [
             "metadata"
@@ -1340,6 +1344,7 @@
     },
     "lcpconf_metadata": {
         "title": "Primary Land Cover Confidence Metadata",
+        "description": "Primary Land Cover Confidence product metadata",
         "type": "application/xml",
         "roles": [
             "metadata"
@@ -1401,6 +1406,7 @@
     },
     "lcsconf_metadata": {
         "title": "Secondary Land Cover Confidence Metadata",
+        "description": "Secondary Land Cover Confidence product metadata",
         "type": "application/xml",
         "roles": [
             "metadata"
@@ -1423,6 +1429,7 @@
     },
     "sctime_metadata": {
         "title": "Time of Spectral Change Metadata",
+        "description": "Time of Spectral Change product metadata",
         "type": "application/xml",
         "roles": [
             "metadata"
@@ -1445,6 +1452,7 @@
     },
     "scmag_metadata": {
         "title": "Change Magnitude Metadata",
+        "description": "Change Magnitude product metadata",
         "type": "application/xml",
         "roles": [
             "metadata"
@@ -1467,6 +1475,7 @@
     },
     "scstab_metadata": {
         "title": "Spectral Stability Period Metadata",
+        "description": "Spectral Stability Period product metadata",
         "type": "application/xml",
         "roles": [
             "metadata"
@@ -1489,6 +1498,7 @@
     },
     "sclast_metadata": {
         "title": "Time Since Last Change Metadata",
+        "description": "Time Since Last Change product metadata",
         "type": "application/xml",
         "roles": [
             "metadata"
@@ -1553,6 +1563,7 @@
     },
     "scmqa_metadata": {
         "title": "Model Quality Metadata",
+        "description": "Model Quality product metadata",
         "type": "application/xml",
         "roles": [
             "metadata"
